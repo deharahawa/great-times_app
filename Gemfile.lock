@@ -43,6 +43,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  bundler (= 2.0.2)
   faker
   rake
   rspec
