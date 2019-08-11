@@ -2,4 +2,7 @@ language: ruby
 rvm:
   - 2.2
   - jruby
-script: bundle exec rake
+
+script: 
+  - gem install bundle
+  - bundle exec rake
