@@ -4,8 +4,6 @@ rvm:
   - jruby
 before_install:
   - gem install bundler
-  - gem install bundler
-  - gem install -v 2.0.2 bundler --no-rdoc --no-ri
   - bundle _2.0.2_ install
 
 before_script:
