@@ -2,7 +2,12 @@ language: ruby
 rvm:
   - 2.2
   - jruby
+before_install:
+  - gem install -v 2.0.2 bundler --no-rdoc --no-ri
+  - bundle _2.0.2_ install
 
-script: 
+before_script:
+  - bundle update --bundler
+script:   
   - gem install bundle
   - bundle exec rake

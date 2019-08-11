@@ -1,6 +1,9 @@
-source 'https://rubygems.org'
-gem 'bundler', '2.0.2'
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
 gem 'rake'
-gem 'activerecord'
 gem 'rspec'
-gem 'faker'
+# gem "rails"
