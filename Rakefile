@@ -1,6 +1,6 @@
 desc "Print reminder about eating more fruit."
 
-task :default => :test :spec
+task :default => :test
 
 task :test do
   puts "Eat more apples!"
