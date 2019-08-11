@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rack', '~> 2.0.1'
+gem 'rack'
 gem 'rspec'
 gem 'rake'
 gem 'cucumber'
