@@ -2,6 +2,4 @@ language: ruby
 rvm:
   - 2.2
   - jruby
-install:
-- bundle install
 script: bundle exec rake
