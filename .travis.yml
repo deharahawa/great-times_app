@@ -1,8 +1,10 @@
 language: ruby
 rvm:
-  - 2.2
+  - 2.3
   - jruby
 before_install:
+  - gem install bundler
+  - gem install bundler
   - gem install -v 2.0.2 bundler --no-rdoc --no-ri
   - bundle _2.0.2_ install
 
