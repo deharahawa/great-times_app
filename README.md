@@ -17,4 +17,4 @@ Find a way to connect musicians and stablishments
 * ###### Beatriz Pozzan -  9779109
 * ###### Fernando Freitas - 9778901 
 * ###### Wendel Silva - 9844978
-* ##### Ricardo Vázquez - 9277412
+* ###### Ricardo Vázquez - 9277412
