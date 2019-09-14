@@ -1,0 +1,63 @@
+/*Fontes*/
+
+.titulo-confirmar-buscar{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.subtitulo-confirmar-buscar{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.titulo-filtros{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 20pt;
+}
+
+
+.estrutura-confirmar-eventos{
+	text-align: center;
+}
+
+.botao-pesquisar{
+	background-color: #ff8001!important;
+	font-family: 'Lexend Deca', sans-serif;
+	color: white!important;
+	width: 100%;
+}
+
+.botao-pesquisar:hover{
+	opacity: 0.7;
+}
+
+.botao-seguinte{
+	background-color: #ff8001!important;
+	font-family: 'Lexend Deca', sans-serif;
+	color: white!important;
+	width: 50%;
+	margin-left: 10%;
+	background-image: url('images/icones/right-navigation-button.png');
+}
+
+.botao-seguinte:hover{
+	opacity: 0.7;
+}
+
+
+.botao-voltar{
+	background-color: #ff8001!important;
+	font-family: 'Lexend Deca', sans-serif;
+	color: white!important;
+	width: 50%;
+	margin-left: 10%;
+	background-image: url('images/icones/right-navigation-button.png');
+	transform: rotate(180deg);
+}
+
+.botao-voltar:hover{
+	opacity: 0.7;
+}
+
+.estrutura-card-imagem{
+	object-fit: cover;
+	height: 190px;
+}
