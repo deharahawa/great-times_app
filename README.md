@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Deh410/great-times_app.svg?branch=master)](https://travis-ci.com/Deh410/great-times_app) [![Maintainability](https://api.codeclimate.com/v1/badges/6904662864fd779b90f1/maintainability)](https://codeclimate.com/github/Deh410/software-engineering-1/maintainability) <a href="https://codeclimate.com/github/Deh410/software-engineering-1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6904662864fd779b90f1/test_coverage" /></a>
+[![Build Status](https://travis-ci.com/Deh410/great-times_app.svg?branch=master)](https://travis-ci.com/Deh410/great-times_app)  [![Maintainability](https://api.codeclimate.com/v1/badges/b871d486f0e8a5ed8d0b/maintainability)](https://codeclimate.com/github/Deh410/great-times_app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b871d486f0e8a5ed8d0b/test_coverage)](https://codeclimate.com/github/Deh410/great-times_app/test_coverage)
 
 # Great Times
 The main goal of this project is:
