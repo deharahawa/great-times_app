@@ -9,6 +9,13 @@ gem 'rails', '~> 6.0.0'
 
 gem 'pg'
 gem 'devise'
+
+gem 'haml', '~> 5.1', '>= 5.1.2'
+
+gem 'simple_form', '~> 4.1'
+
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
