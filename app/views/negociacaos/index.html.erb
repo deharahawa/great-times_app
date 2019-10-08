@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Negociacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Salario combinado</th>
+      <th>Status negociacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @negociacaos.each do |negociacao| %>
+      <tr>
+        <td><%= negociacao.salario_combinado %></td>
+        <td><%= negociacao.status_negociacao %></td>
+        <td><%= link_to 'Show', negociacao %></td>
+        <td><%= link_to 'Edit', edit_negociacao_path(negociacao) %></td>
+        <td><%= link_to 'Destroy', negociacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Negociacao', new_negociacao_path %>

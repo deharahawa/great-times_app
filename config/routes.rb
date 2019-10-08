@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :eventos
+  resources :estabelecimentos
+  resources :grupo_musicals
+  resources :negociacaos
+  resources :avaliacaos
+  resources :tipo_estabelecimentos
+  resources :generos
+  resources :instrumentos
+  resources :redes
+  resources :contatos
   get 'events/index'
   get 'event/create'
   root to: "home#index"

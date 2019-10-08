@@ -1,0 +1,31 @@
+
+<%= simple_form_for(@grupo_musical) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :sobrenome %>
+    <%= f.input :nome_artistico %>
+    <%= f.input :email %>
+    <%= f.input :senha %>
+    <%= f.input :data_nascimento %>
+    <%= f.input :endereco %>
+    <%= f.input :numero %>
+    <%= f.input :cep %>
+    <%= f.input :cidade %>
+    <%= f.input :estado %>
+    <%= f.input :pais %>
+    <%= f.input :telefone %>
+    <%= f.input :biografia %>
+    <%= f.input :salario_hora %>
+    <%= f.input :imagens %>
+    <%= f.input :video %>
+    <%= f.input :cpf %>
+    <%= f.input :pontos %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

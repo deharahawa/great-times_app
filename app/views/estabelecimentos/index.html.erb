@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estabelecimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Nome proprietario</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th>Descricao</th>
+      <th>Capacidade</th>
+      <th>Endereco</th>
+      <th>Numero</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Pais</th>
+      <th>Cnpj</th>
+      <th>Telefone</th>
+      <th>Imagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estabelecimentos.each do |estabelecimento| %>
+      <tr>
+        <td><%= estabelecimento.nome %></td>
+        <td><%= estabelecimento.nome_proprietario %></td>
+        <td><%= estabelecimento.email %></td>
+        <td><%= estabelecimento.senha %></td>
+        <td><%= estabelecimento.descricao %></td>
+        <td><%= estabelecimento.capacidade %></td>
+        <td><%= estabelecimento.endereco %></td>
+        <td><%= estabelecimento.numero %></td>
+        <td><%= estabelecimento.cidade %></td>
+        <td><%= estabelecimento.estado %></td>
+        <td><%= estabelecimento.pais %></td>
+        <td><%= estabelecimento.cnpj %></td>
+        <td><%= estabelecimento.telefone %></td>
+        <td><%= estabelecimento.imagem %></td>
+        <td><%= link_to 'Show', estabelecimento %></td>
+        <td><%= link_to 'Edit', edit_estabelecimento_path(estabelecimento) %></td>
+        <td><%= link_to 'Destroy', estabelecimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estabelecimento', new_estabelecimento_path %>

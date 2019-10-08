@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@evento) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :data_evento %>
+    <%= f.input :data_limite_inscricao %>
+    <%= f.input :capacidade %>
+    <%= f.input :imagem %>
+    <%= f.input :descricao %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

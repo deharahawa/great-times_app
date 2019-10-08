@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome rede</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redes.each do |rede| %>
+      <tr>
+        <td><%= rede.nome_rede %></td>
+        <td><%= link_to 'Show', rede %></td>
+        <td><%= link_to 'Edit', edit_rede_path(rede) %></td>
+        <td><%= link_to 'Destroy', rede, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rede', new_rede_path %>

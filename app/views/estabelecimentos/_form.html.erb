@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@estabelecimento) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :nome_proprietario %>
+    <%= f.input :email %>
+    <%= f.input :senha %>
+    <%= f.input :descricao %>
+    <%= f.input :capacidade %>
+    <%= f.input :endereco %>
+    <%= f.input :numero %>
+    <%= f.input :cidade %>
+    <%= f.input :estado %>
+    <%= f.input :pais %>
+    <%= f.input :cnpj %>
+    <%= f.input :telefone %>
+    <%= f.input :imagem %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
