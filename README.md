@@ -7,7 +7,7 @@ Find a way to connect musicians and stablishments
 > Repo for the Software Engineering class
 
 #### Heroku app deploy
-* ["Great times" - Heroku deploy link](https://great-times.herokuapp.com)
+* ["Great times" - Heroku deploy link](https://great-times-app.herokuapp.com/)
 
 #### Pivotal tracker project link
 * [Pivotal tracker dashboard](https://www.pivotaltracker.com/n/projects/2397596)
