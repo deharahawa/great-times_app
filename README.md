@@ -12,6 +12,32 @@ Find a way to connect musicians and stablishments
 #### Pivotal tracker project link
 * [Pivotal tracker dashboard](https://www.pivotaltracker.com/n/projects/2397596)
 
+## Getting started
+
+To get started with the app, clone the repo and then install the needed gems:
+
+```
+$ bundle install --without production
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
 ### Members
 * ###### Andre Arahawa - 9277520
 * ###### Beatriz Pozzan -  9779109
