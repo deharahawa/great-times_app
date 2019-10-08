@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :home
   resources :eventos
   resources :estabelecimentos
   resources :grupo_musicals
