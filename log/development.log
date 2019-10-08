@@ -41605,3 +41605,10 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 31399)
 
 
+Started GET "/" for ::1 at 2019-10-08 12:06:11 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 37.4ms | Allocations: 32504)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 33932)
+
+
