@@ -1,2 +1,489 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<title>Home</title>
+	<meta charset="utf-8">
+	
+	<!-- CSS Local -->
+	<%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+	
+	<!-- CSS Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Importação de Fontes do Google -->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+	</style>
+
+</head>
+<body>
+	<%=yield%>
+	<!-- Nosso menu começa aqui -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  	<a class="navbar-brand fonte-menu" href="#">SERVIÇO</a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+  	<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    	<ul class="navbar-nav ">
+      		<li class="nav-item active ">
+        	<a class="nav-link fonte-menu link-menu" href="index.html">Home<span class="sr-only">(current)</span></a>
+      		</li>
+      		<li class="nav-item">
+        	<a class="nav-link fonte-menu link-menu" href="#servico">Serviço</a>
+      		</li>
+      		<li class="nav-item">
+        	<a class="nav-link fonte-menu link-menu" href="#equipe">Equipe</a>
+      		</li>
+      		<li class="nav-item">
+        	<a class="nav-link fonte-menu link-menu" href="#contato">Contato</a>
+      		</li>
+      		<li class="nav-item lista-menu-superior">
+        	<button type="button" class="btn btn-lg botao-menu" data-toggle="modal" data-target="#modal-login">Login</button>
+      		</li>
+      		<li class="nav-item lista-menu-superior">
+      		<a href="buscar.html"><button type="button" class="btn btn-lg botao-menu">Cadastrar</button></a>
+      		</li>
+    	</ul>
+  	</div>
+	</nav>
+	<!-- Nosso menu termina aqui -->
+
+
+	<!-- Nosso Carrousel começa aqui -->
+	<div class="bd-example">
+	  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="5000">
+	    <ol class="carousel-indicators">
+	      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+	      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+	    </ol>
+	    <div class="carousel-inner">
+	      <div class="carousel-item active">
+	        <%=image_tag("classic-close-up-dark-358666.jpg", :class => "d-block w-100 image-carrousel")%>
+			<div class="carousel-caption d-none d-md-block correcao-texto-slideshow">
+	          <h1 class="text-md-left texto-slideshow">SERVIÇO</h1>
+	          <p class="text-md-left fonte-paragrafo" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate felis sed tincidunt dapibus. In hac habitasse platea dictumst. Pellentesque et nulla eget purus sodales ultricies eget at arcu. In sagittis at tellus in imperdiet. Nullam tempus odio sit amet vulputate aliquam.</p>
+	          <button type="button" class="btn btn-lg correcao-botao-slideshow">Procuro emprego</button>
+			  <button type="button" class="btn btn-lg correcao-botao-slideshow">Quero contratar</button>
+	        </div>
+	      </div>
+      	<div class="carousel-item">
+			<%=image_tag("audio-concert-hand-33779.jpg", :class => "d-block w-100 image-carrousel")%>
+        	<div class="carousel-caption d-none d-md-block correcao-texto-slideshow">
+          		<h1 class="text-md-left texto-slideshow">SERVIÇO</h1>
+          		<p class="text-md-left fonte-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate felis sed tincidunt dapibus. In hac habitasse platea dictumst. Pellentesque et nulla eget purus sodales ultricies eget at arcu. In sagittis at tellus in imperdiet. Nullam tempus odio sit amet vulputate aliquam.</p>
+		        <button type="button" class="btn  btn-lg correcao-botao-slideshow">Procuro emprego</button>
+				<button type="button" class="btn  btn-lg correcao-botao-slideshow">Quero contratar</button>
+        	</div>
+        </div>
+    	</div>
+    		<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      		<span class="sr-only">Previous</span>
+    		</a>
+    		<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+      		<span class="sr-only">Next</span>
+    	</a>
+      </div>
+	</div>
+	<!-- Nosso carrousel termina aqui -->
+
+	<!-- NossO serviço começa aqui -->
+	<div class="container container-servico">
+	  <div class="row">
+	    <div class="col mt-2">
+	    	<h3 id="servico" class="fonte-heading2 heading-servico">Serviço</h3>
+	    	<h4 class="subtitulo-servico">Entenda um pouco sobre o que oferecemos</h4>
+	    	<p class="texto-servico">Primeiro nos diga, em qual das categorias você se identifica</p>
+	      	<p>
+	      		<div class="container container-servico">
+	  				<div class="row">
+	    				<div class="col col-sm-6" margin-right="-2%" border="none">
+				      	  <div class="card formato-card" style="width: 18rem;">
+							<%=image_tag("musico.jpg", :class => "card-img")%>
+						  	<div class="card-body">
+						    	<h5 class="card-title"></h5>
+						    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    	
+								<button class="btn botao-diagrama" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								EU QUERO ME APRESENTAR
+								</button>
+						  	</div>
+			  			  </div>
+			  			</div>
+			  			<div class="col col-sm-6">
+						  <div class="card formato-card" style="width: 18rem;">
+						  	<%=image_tag("local-modelo.jpg", :class => "card-img")%>
+							  <div class="card-body">
+						    	<h5 class="card-title"></h5>
+						    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    	
+								<button class="btn botao-diagrama" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+								EU QUERO ME APRESENTAR
+								</button>
+						  	</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</p>
+	    </div>
+	    <div class="col mt-5">
+	      	<div class="collapse" id="collapseExample">
+			  <div class="card card-body card-conteudo">
+			 		<ul class="list-group list-group-horizontal justify-content-center">
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("clipboard.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Cadastrar</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  <%=image_tag("resume.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Editar Perfil</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("magnifier.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Buscar</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis/p>
+					  </li>
+					  
+					</ul>
+					<ul class="list-group list-group-horizontal justify-content-center">
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("menu.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Procurar Eventos</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  <%=image_tag("application.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Confirmar Aplicação</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					</ul>
+			  </div>
+			</div>
+			<div class="collapse" id="collapseExample2">
+			  <div class="card card-body card-conteudo">
+			  	<ul class="list-group list-group-horizontal justify-content-center">
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("clipboard.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Cadastrar</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("resume.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Editar Perfil</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  	<%=image_tag("promotion.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Publique seus eventos</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis/p>
+					  </li>
+					  
+					</ul>
+					<ul class="list-group list-group-horizontal justify-content-center">
+					  <li class="list-group-item lista-diagrama card-conteudo">
+					  <%=image_tag("search.png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Escolher banda</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					  <li class="list-group-item lista-diagrama card-conteudo">
+						<%=image_tag("handshake (1).png", :class => "imagem-diagrama")%>
+					  	<p class="fonte-paragrafo">Fechar Contrato</p>
+					  	<p class="fonte-paragrafo-diagrama">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+					  </li>
+					  
+					</ul>
+			  </div>
+			</div>
+	    </div>
+	</div>
+</div>
+
+	<!-- Nosso serviço termina aqui -->
+
+	<!-- Nosso time começa aqui -->
+	<h3 id="equipe" class="fonte-heading2 heading-equipe">Equipe</h3>
+	<div class="container">
+	  <div class="row">
+	    <div class="col">
+	     <li class="list-group-item tirando-listras" align="center" >
+			<%=image_tag("foto1.jpg", :class => "imagem-time")%>
+	  		<p class="fonte-paragrafo">Fernando</p>
+	  		<p class="profissao">papel projeto</p>
+	  	 </li>
+	  	 <p class="fonte-paragrafo-equipe">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+	  	 <ul class="item-lista-contato-pessoal">
+		 	<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal"></p></li>
+	  		<li class="contato-pessoal corrigir-imagem"><%=image_tag("github.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-De-Freitas</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("instagram.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">@nandofreitas01</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("linkedin-logo.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-Santos-De-Freitas</p></li>
+	  	</ul>
+	    </div>
+	    <div class="col">
+	      <li class="list-group-item tirando-listras" align="center" >
+			  <%=image_tag("foto3.jpg", :class => "imagem-time")%>
+	  		<p class="fonte-paragrafo">Wendel</p>
+	  		<p class="profissao">papel projeto</p>
+	  	  </li>
+	  	  <p class="fonte-paragrafo-equipe">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+	  	  <ul class="item-lista-contato-pessoal">
+		 	<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal"></p></li>
+	  		<li class="contato-pessoal"><%=image_tag("github.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-De-Freitas</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("instagram.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">@nandofreitas01</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("linkedin-logo.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-Santos-De-Freitas</p></li>
+	  	</ul>
+	    </div>
+	    <div class="col">
+	      <li class="list-group-item tirando-listras" align="center" >
+			  <%=image_tag("foto2.jpg", :class => "imagem-time")%>
+	  		<p class="fonte-paragrafo">André</p>
+	  		<p class="profissao">papel projeto</p>
+	  	  </li>
+	  	  <p class="fonte-paragrafo-equipe">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+	  	  <ul class="item-lista-contato-pessoal">
+		 	<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal"></p></li>
+	  		<li class="contato-pessoal"><%=image_tag("github.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-De-Freitas</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("instagram.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">@nandofreitas01</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("linkedin-logo.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-Santos-De-Freitas</p></li>
+	  	</ul>
+	    </div>
+	    <div class="col">
+	      <li class="list-group-item tirando-listras" align="center" >
+			  <%=image_tag("foto4.jpg", :class => "imagem-time")%>
+	  		<p class="fonte-paragrafo">Beatriz</p>
+	  		<p class="profissao">papel projeto</p>
+	  	  </li>
+	  	  <p class="fonte-paragrafo-equipe">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+	  	  <ul class="item-lista-contato-pessoal">
+		 	<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal"></p></li>
+	  		<li class="contato-pessoal"><%=image_tag("github.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-De-Freitas</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("instagram.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">@nandofreitas01</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("linkedin-logo.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-Santos-De-Freitas</p></li>
+	  	</ul>
+	    </div>
+	    <div class="col">
+	      <li class="list-group-item tirando-listras" align="center" >
+			  <%=image_tag("foto5.jpg", :class => "imagem-time")%>
+	  		<p class="fonte-paragrafo">Ricardo</p>
+	  		<p class="profissao">papel projeto</p>
+	  	  </li>
+	  	  <p class="fonte-paragrafo-equipe">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis</p>
+	  	  <ul class="item-lista-contato-pessoal">
+		 	<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal"></p></li>
+	  		<li class="contato-pessoal"><%=image_tag("github.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-De-Freitas</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("instagram.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">@nandofreitas01</p></li>
+	  	</ul>
+	  	<ul class="item-lista-contato-pessoal">
+	  		<li class="contato-pessoal"><%=image_tag("linkedin-logo.png")%></li>
+	  		<li class="contato-pessoal-nome"><p class="paragrafo-contato-pessoal">Fernando-Santos-De-Freitas</p></li>
+	  	</ul>
+	    </div>
+	  </div>
+	</div>
+</section>
+<!-- Nosso time termina aqui -->
+
+	<!-- Nosso carrousel de declarações começa aqui -->
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
+	  		<div class="carousel-inner">
+	    		<div class="carousel-item active">
+	        		<div class="fundo-slide-declaracao">
+	        			<div class="conteudo-imagem">	
+	        				<%=image_tag("imageedit_3_3989138510.png", :class => "imagens-declaracao")%>
+							<p class="fonte-paragrafo-nome-declaracao">Carolina Esteves - Cantora</p>
+	        			</div>
+	        			<div class="declaracao">
+	        				<ul class="lista-declaracao">
+	        					<li class="item-declaracao"><img class="imagem-declaracao" src="images/icones/aspas.png"/></li>
+	        					<li class="item-declaracao item-texto-declaracao"><p class="fonte-paragrafo-declaracao">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis litora a duis lectus congue porttitor cubilia turpis inceptos lacinia ex suspendisse maximus tortor enim consequat feugiat pharetra penatibus curae tristique ligula eleifend at auctor tempus</p></li>
+	        				</ul>
+	        			</div>
+	        		</div>
+	    		</div>
+	    		<div class="carousel-item">
+	      			<div class="fundo-slide-declaracao">
+	      				<div class="conteudo-imagem">
+	      					
+	      					<%=image_tag("imageedit_6_7742968026.png", :class => "imagens-declaracao")%>
+							  <p class="fonte-paragrafo-nome-declaracao">Mark O'Donnel - Bateirista</p>
+	      				</div>
+	      				<div class="declaracao">
+	        				<ul class="lista-declaracao">
+	        					<li class="item-declaracao"><img class="imagem-declaracao" src="images/icones/aspas.png"/></li>
+	        					<li class="item-declaracao item-texto-declaracao"><p class="fonte-paragrafo-declaracao">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis litora a duis lectus congue porttitor cubilia turpis inceptos lacinia ex suspendisse maximus tortor enim consequat feugiat pharetra penatibus curae tristique ligula eleifend at auctor tempus</p></li>
+	        				</ul>
+	        			</div>
+	        		</div>
+	    		</div>
+	    		<div class="carousel-item">
+	     	 		<div class="fundo-slide-declaracao">
+	     	 			<div class="conteudo-imagem">
+	      					
+	      					<%=image_tag("imageedit_9_7596946932.png", :class => "imagens-declaracao")%>
+							<p class="fonte-paragrafo-nome-declaracao">Cristina Von Dorf - Empresária</p>
+	      				</div>
+	      				<div class="declaracao">
+	        				<ul class="lista-declaracao">
+	        					<li class="item-declaracao"><img class="imagem-declaracao" src="images/icones/aspas.png"/></li>
+	        					<li class="item-declaracao item-texto-declaracao"><p class="fonte-paragrafo-declaracao">lorem ipsum dolor sit amet consectetur adipiscing elit sagittis velit torquent class ornare lobortis litora a duis lectus congue porttitor cubilia turpis inceptos lacinia ex suspendisse maximus tortor enim consequat feugiat pharetra penatibus curae tristique ligula eleifend at auctor tempus</p></li>
+	        				</ul>
+	        			</div>
+	        		</div>
+	    		</div>
+	  		</div>
+		</div>
+	<!-- Nosso carrousel de declarações termina aqui -->
+
+	  <!-- Nosso contato começa aqui -->
+	  <h3 id="contato" class="fonte-heading2 mt-4 mb-4 heading-contato">Contato</h3>
+	  <div class="container">
+		  <div class="row">
+		    <div class="col-sm-6">
+			    <form>
+		    		<div class="form-group">
+					    <input type="text" class="form-control mb-2" placeholder="Nome Completo">
+				    	<input type="text" class="form-control mb-2" placeholder="Telefone">
+					    <input type="email" class="form-control mb-2" id="exampleFormControlInput1" placeholder="E-mail">
+					    <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="3" placeholder="Deixe seu comentário..."></textarea>
+					    <button type="submit" class="btn botao-contato mb-2">Enviar</button>
+					</div>
+				</form>
+		    </div>
+
+		    <div class="col-sm-6">
+		      	<ul class="mb-4">
+		      		<li class="lista-contato"><%=image_tag("placeholder.png", :class => "icone-contato")%></li>
+		      		<li class="lista-contato"><h3 class="fonte-heading3">Nossa localização</h3></li>
+		      		<p class="fonte-paragrafo">EACH USP - Rua Arlindo Béttio, 1000 - Vila Guaraciaba, São Paulo - SP</p>
+		  		</ul>
+		      	
+		      	<ul class="mb-4">
+		      		<li class="lista-contato"><%=image_tag("telephone.png", :class => "icone-contato")%></li>
+		      		<li class="lista-contato"><h3 class="fonte-heading3">Nos ligue</h3></li>
+		      		<p class="fonte-paragrafo">+55 (11) 99348-3334</p>
+		      		<p class="fonte-paragrafo">+55 (11) 99758-3984</p>
+		  		</ul>
+		      	
+		      	<ul>
+		      		<li class="lista-contato"><%=image_tag("paper-plane.png", :class => "icone-contato")%></li>
+		      		<li class="lista-contato"><h3 class="fonte-heading3">Nos mande e-mail</h2></li>
+		      		<p class="fonte-paragrafo">fernando.santos.freitas@usp.br</p>
+		  		</ul>
+		    </div>
+	  </div>
+	</div>
+  <!-- Nosso contato termina aqui -->
+
+		  <!-- Nosso footer começa aqui -->
+		  <footer class="rodape">  	
+		  	<h2 class="fonte-heading2 mb-4 heading-footer">Serviço</h2>
+		  	<div class="container pb-5">
+		  	
+			  <div class="row">
+			    <div class="col-sm-6 redes-sociais">
+			    <ul class="nav justify-content-start">
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("github.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("youtube.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("twitter.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("facebook-logo.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("instagram.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("linkedin-logo.png", :class => "icone-contato")%></a></li>
+				</ul>
+				</div>
+				<div class="col-sm-6">
+				<ul class="nav justify-content-center">
+		      		<li class="lista-redes-rodape"><p class="fonte-paragrafo">Copyright &copy; 2019 | Nome Serviço</p></li>
+				</ul>
+				</div>
+				</div>
+			  </div>
+		  </footer>
+		  <!-- Nosso footer termina aqui -->
+
+	<!-- Nosso modal começa aqui -->
+	<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+			<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+				    <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém</small>
+				    <label for="exampleInputPassword1 pt-1">Senha</label>
+    				<input type="password" class="form-control" id="exampleInputPassword1">
+				  </div>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+	        <button type="button" class="btn btn-primary">Entrar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Nosso modal acaba aqui -->
+
+	<!-- Javascript Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

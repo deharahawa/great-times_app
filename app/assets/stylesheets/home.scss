@@ -1,3 +1,344 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fonte-heading2{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 30pt;
+	color: #ff8000;
+}
+
+.fonte-heading3{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 15pt;
+	color: #ff8000;
+}
+
+.fonte-heading4{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 15pt;
+	color: #ff8000;
+}
+
+
+.fonte-paragrafo{
+	font-family: 'Montserrat', serif;
+}
+
+/*Aqui termina os estilos das fontes*/
+
+/*Navbar*/
+
+.fonte-menu{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 15pt;
+}
+
+.link-menu{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 15pt;
+}
+
+.link-menu:hover{
+	color: #ff8000 !important;
+}
+
+.botao-menu{
+	font-family: 'Lexend Deca', sans-serif;
+	background-color: #ff8000 !important;
+	color: white !important;
+}
+
+.botao-menu:hover{
+	opacity: 0.8;
+}
+
+.lista-menu-superior{
+	margin-right: 1%;
+}
+
+/*Fim do estilo da navbar*/
+
+/*O estilo da seção servico começa aqui*/
+
+.heading-servico{
+	margin-top: 5%;
+}
+
+.botao-diagrama{
+	background-color: #ff8000!important;
+	color: white!important;
+	font-family: 'Lexend Deca', sans-serif; 
+}
+
+.botao-diagrama:hover{
+	opacity: 0.8;
+}
+
+.subtitulo-servico{
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 15pt;
+}
+
+.texto-servico{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12pt;
+}
+
+.container-servico{
+	width: 100%;
+	height: 500px;
+}
+
+.formato-card{
+	width: 90%!important;
+	height: 200px!important;
+	border: none!important;
+	margin-left: -5%;
+	padding-right: -2%;
+}
+
+.card-img{
+	object-fit: cover;
+	object-position: 0 50%;
+	height: 150px;
+}
+
+.lista-diagrama{
+	text-align: center;
+	border: none;
+}
+
+.fonte-paragrafo-diagrama{
+	font-size: 10pt;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.card-conteudo{
+	border: none!important;
+}
+
+/*O estilo da seção servico termina aqui*/
+
+/*Equipe*/
+
+.heading-equipe{
+	margin-bottom: 4%;
+	margin-top: 7%;
+	margin-left: 7%;
+}
+
+.profissao{
+	text-align: center;
+	font-family: 'Lexend Deca', sans-serif;
+	color: gray;
+	margin: -3%;
+}
+
+.fonte-paragrafo-equipe{
+	text-align: center;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+.content-equipe{
+	margin-left: 10%;
+}
+
+.lista-contato-pessoal{
+	display: inline-block;
+}
+
+.item-lista-contato-pessoal{
+	width: 100%;
+	margin-bottom: -5%;
+	padding: 0;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.contato-pessoal{
+	display: inline-block;
+}
+
+.corrigir-imagem{
+	padding-left: -2%;
+}
+
+.contato-pessoal-nome{
+	display: inline-block;
+}
+
+.paragrafo-contato-pessoal{
+	font-size: 9pt;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+/*Aqui termina o estilo da seção equipe*/
+
+/*Aqui começa o slideshow de declarações*/
+
+.fundo-slide-declaracao{
+	width: 100%;
+	height: 500px;
+	background-color: white;
+}
+
+.conteudo-imagem{
+	width: 100%;
+	height: 150px;
+	padding-top: 5%;
+	text-align: center;
+}
+
+.imagens-declaracao{
+	height: 120px;
+	width: 10%;
+	border-radius: 100px;
+}
+
+.lista-declaracao{
+	text-decoration-style: none;
+	display: inline-flex;
+}
+
+.declaracao{
+	margin-top:7%;
+}
+
+.item-declaracao{
+	display: inline-block;
+}
+
+
+
+.item-texto-declaracao{
+	padding-left: 5%;
+	padding-right: 10%;
+}
+
+.fonte-paragrafo-declaracao{
+	font-family: 'Lexend Deca', sans-serif;
+	text-align: center;
+	font-style: italic;
+	font-size: 18pt;
+}
+
+.fonte-paragrafo-nome-declaracao{
+	font-family: 'Lexend Deca', sans-serif;
+	color: #ff8000;
+	font-size: 14pt;
+}
+
+
+/*Aqui termina o slideshow de declarações*/
+
+.texto-slideshow{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.correcao-texto-slideshow{
+	margin-bottom: 8%;
+	width:32%;
+}
+
+.correcao-botao-slideshow{
+	float: left;
+	margin-right: 2%;
+	font-family: 'Lexend Deca', sans-serif;
+	background-color: #ff8000 !important;
+	color: white !important;
+}
+
+.correcao-botao-slideshow:hover{
+	opacity: 0.8;
+}
+
+.nav-fonte{
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+}
+
+.nav-correcao{
+	margin-right: 7%;
+}
+
+.image-carrousel{
+	object-fit: cover;
+	object-position: 0 50%;
+	height: 550px;
+}
+
+
+.imagem-time{
+	object-fit: cover;
+	height: 150px;
+	width: 150px;
+	align-items: center;
+	border-radius: 100%;
+	margin-bottom: 4%;
+}
+
+.lista-staff{
+	list-style: none;
+	align-content: center;
+}
+
+.tirando-listras{
+	list-style: none;
+	border: none!important;
+}
+
+/*Contato*/
+
+.heading-contato{
+	margin-bottom:4%;
+	margin-left:7%;
+}
+
+.lista-contato{
+	display: inline-block;
+	margin-right: 3%;
+}
+
+.icone-contato{
+	padding-top: -1%;
+}
+
+.botao-contato{
+	width: 100%;
+	background-color: #ff8000!important;
+	color: white!important;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+.botao-contato:hover{
+	opacity: 0.8;
+}
+
+/*Footer*/
+
+.heading-footer{
+	margin-left:7%;	
+}
+
+.rodape{
+	background-color: #f2f2f2;
+	padding-top: 2%;
+}
+.redes-sociais{
+	width: 100%;
+}
+
+.lista-redes-rodape{
+	display: inline-block;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+
+.redes-link:hover{
+	opacity: 0.8;
+}
+
+.conteudo-forms{
+	width: 50%!important;
+}

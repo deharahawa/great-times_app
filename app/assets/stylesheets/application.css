@@ -13,11 +13,10 @@
  *= require_tree .
  *= require_self
  */
-nav ul {
-    display: flex;
-    align-items: center;
-}
 
-nav ul li {
-    padding: 10px 20px;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-social";
+@import "pages";

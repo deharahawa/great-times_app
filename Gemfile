@@ -1,22 +1,19 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
+
 # Use Puma as the app server
-
-gem 'pg'
-gem 'devise'
-
-gem 'haml', '~> 5.1', '>= 5.1.2'
-
-gem 'simple_form', '~> 4.1'
-
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
-
 gem 'puma', '~> 3.11'
+
+gem 'uglifier', '3.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
+
+gem 'coffee-rails', '4.2.2'
+gem 'jquery-rails', '4.3.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,18 +28,29 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+#Bootstrap gem
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-sass', '~> 4.3.0'
+gem 'jquery-ui-rails'
+gem 'bootstrap-social-rails' 
+
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+  gem 'bootsnap', '>= 1.4.2', require: false
+  gem 'devise'
+  gem 'simple_form'
 
 group :development, :test do
-  gem 'cucumber', '~> 3.1', '>= 3.1.2'
-
-  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.4'
 end
+
+group :production do
+  gem 'pg', '0.20.0'
+end
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
