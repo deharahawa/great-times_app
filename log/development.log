@@ -41612,3 +41612,10 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 33932)
 
 
+Started GET "/" for ::1 at 2019-10-08 14:15:04 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 43.2ms | Allocations: 30997)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms | Allocations: 31419)
+
+
