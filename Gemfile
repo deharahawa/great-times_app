@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.7'
 
 #Bootstrap gem
 gem 'bootstrap', '~> 4.3.1'
-gem 'bootstrap-sass', '~> 3.3.4'
+# gem 'bootstrap-sass', '~> 3.3.4'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'font-awesome-sass', '~> 4.3.0'
 gem 'jquery-ui-rails'
 gem 'bootstrap-social-rails' 
