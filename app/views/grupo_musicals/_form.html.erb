@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<meta charset="utf-8">
+	
+	<!-- CSS Local -->
+	<%= stylesheet_link_tag 'buscar', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'grupo_musicals', media: 'all', 'data-turbolinks-track' => true %>
+	
+	<!-- CSS Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Importação de Fontes do Google -->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+	</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  	<a class="navbar-brand fonte-menu" href="#">SERVIÇO</a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+  	<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link fonte-menu" href="#"><p>100</p><span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active mr-4">
+            <a class="nav-link fonte-menu link-menu" href="#"><%=image_tag("music-player.png")%><span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link fonte-menu link-menu" href="buscar.html">Encontre um local<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%=image_tag("user (1).png")%>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Editar</a>
+              <a class="dropdown-item" href="#">Meus eventos</a>
+              <a class="dropdown-item" href="#">Configurações</a>
+              <a class="dropdown-item" href="#">Sair</a>
+            </div>
+          </li>
+        </ul>
+  	</div>
+	</nav>
+
+  <div class="estrutura-confirmar-eventos mt-5 mb-5">
+    <h1 class="titulo-confirmar-buscar">Cadastrar</h1>
+  
+  </div>
+  <%= form_for @grupo_musical do |f| %>
+
+  <div class="form-inputs form-actions form-grupos-musicais">
+    Nome<%= f.text_field :nome, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Sobrenome<%= f.text_field :sobrenome , type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Nome Artístico<%= f.text_field :nome_artistico , type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    E-mail<%= f.text_field :email, type:"email", class:"form-control", id:"exmpleInputEmail", ariadescribed:"emailHelp", placeholder:"Enter email" %>
+    Senha<%= f.text_field :senha, type:"password", class:"form-control", id:"exampleInputPassword", placeholder:"Senha"  %>
+    Data de nascimento<%= f.text_field :data_nascimento, type:"date", class:"form-control", id:"formGroupExampleInput"  %>
+    CPF<%= f.text_field :cpf, type:"number", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input"  %>
+    Endereço<%= f.text_field :endereco , type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Número<%= f.text_field :numero, type:"number", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input"  %>
+    CEP<%= f.text_field :cep, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Cidade<%= f.text_field :cidade, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Estado<%= f.text_field :estado, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    País<%= f.text_field :pais, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Telefone<%= f.text_field :telefone, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input" %>
+    Biografia<%= f.text_area :biografia, class:"form-control", id:"exampleFormControlTextarea1", rows:"5" %>
+    Salário (Hora)<%= f.text_field :salario_hora, type:"number", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input"  %>
+    Imagem<%= f.text_field :imagens, as: :file, label: "Upload an image", type:"file", class:"form-control-file", id:"exampleFormControlFile1" %>
+    Vídeo<%= f.text_field :video, as: :file, label: "Upload an video", type:"file", class:"form-control-file mb-3", id:"exampleFormControlFile1"  %>
+    <button class=" btn btn-primary" type="submit">Criar Evento</button>
+  </div>
+<% end %>
+		  <!-- Nosso footer começa aqui -->
+		  <footer class="rodape">  	
+		  	<h2 class="fonte-heading2 mb-4 heading-footer">Serviço</h2>
+		  	<div class="container pb-5">
+		  	
+			  <div class="row">
+			    <div class="col-sm-6 redes-sociais">
+			    <ul class="nav justify-content-start">
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("github.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("youtube.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("twitter.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("facebook-logo.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("instagram.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("linkedin-logo.png", :class => "icone-contato")%></a></li>
+				</ul>
+				</div>
+				<div class="col-sm-6">
+				<ul class="nav justify-content-center">
+		      		<li class="lista-redes-rodape"><p class="fonte-paragrafo">Copyright &copy; 2019 | Nome Serviço</p></li>
+				</ul>
+				</div>
+				</div>
+			  </div>
+		  </footer>
+		  <!-- Nosso footer termina aqui -->
+</body>
+</html>
+

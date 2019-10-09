@@ -1,0 +1,2 @@
+class Rede < ApplicationRecord
+end

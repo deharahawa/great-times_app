@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<meta charset="utf-8">
+	
+	<!-- CSS Local -->
+	<%= stylesheet_link_tag 'buscar', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'eventos', media: 'all', 'data-turbolinks-track' => true %>
+	
+	<!-- CSS Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Importação de Fontes do Google -->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+	</style>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+	</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  	<a class="navbar-brand fonte-menu" href="#">SERVIÇO</a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+  	<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link fonte-menu" href="#"><p>100</p><span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active mr-4">
+            <a class="nav-link fonte-menu link-menu" href="#"><%=image_tag("music-player.png")%><span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link fonte-menu link-menu" href="buscar.html">Encontre um local<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%=image_tag("user (1).png")%>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Editar</a>
+              <a class="dropdown-item" href="#">Meus eventos</a>
+              <a class="dropdown-item" href="#">Configurações</a>
+              <a class="dropdown-item" href="#">Sair</a>
+            </div>
+          </li>
+        </ul>
+  	</div>
+	</nav>
+
+  <div class="estrutura-confirmar-eventos mt-5 mb-5">
+    <h1 class="titulo-confirmar-buscar">Criar Novo Evento</h1>
+  
+  </div>
+  <%= form_for @evento do |form| %>
+      <div class="form-group form-eventos">
+      Nome <%=form.text_field :nome, type:"text", class:"form-control", id:"formGroupExampleInput", placeholder:"Example input"%>       
+      Data-Evento <%=form.text_field :data_evento , type:"datetime-local", class:"form-control"%>
+      Data-Limite-Inscrição <%=form.text_field :data_limite_inscricao, type:"datetime-local", class:"form-control"%>
+      Capacidade <%=form.text_field :capacidade, type:"number", class:"form-control"%>
+      Imagem <%=form.text_field :imagem, as: :file, label: "Upload an image", type:"file", class:"form-control-file", id:"exampleFormControlFile1"%>
+      Descricao <%=form.text_area :descricao, class:"form-control mb-2", id:"exampleFormControlTextarea1", rows:"3"%></textarea>
+
+      <button class=" btn btn-primary" type="submit">Criar Evento</button>
+      </div>
+  <% end %>
+		  <!-- Nosso footer começa aqui -->
+		  <footer class="rodape">  	
+		  	<h2 class="fonte-heading2 mb-4 heading-footer">Serviço</h2>
+		  	<div class="container pb-5">
+		  	
+			  <div class="row">
+			    <div class="col-sm-6 redes-sociais">
+			    <ul class="nav justify-content-start">
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("github.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("youtube.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("twitter.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("facebook-logo.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("instagram.png", :class => "icone-contato")%></a></li>
+		      		<li class="lista-redes-rodape"><a class="redes-link" href="#"><%=image_tag("linkedin-logo.png", :class => "icone-contato")%></a></li>
+				</ul>
+				</div>
+				<div class="col-sm-6">
+				<ul class="nav justify-content-center">
+		      		<li class="lista-redes-rodape"><p class="fonte-paragrafo">Copyright &copy; 2019 | Nome Serviço</p></li>
+				</ul>
+				</div>
+				</div>
+			  </div>
+		  </footer>
+		  <!-- Nosso footer termina aqui -->
+</body>
+</html>

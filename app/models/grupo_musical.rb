@@ -1,0 +1,2 @@
+class GrupoMusical < ApplicationRecord
+end

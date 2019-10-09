@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Salario combinado:</strong>
+  <%= @negociacao.salario_combinado %>
+</p>
+
+<p>
+  <strong>Status negociacao:</strong>
+  <%= @negociacao.status_negociacao %>
+</p>
+
+<%= link_to 'Edit', edit_negociacao_path(@negociacao) %> |
+<%= link_to 'Back', negociacaos_path %>

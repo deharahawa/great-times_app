@@ -1,0 +1,2 @@
+class Negociacao < ApplicationRecord
+end

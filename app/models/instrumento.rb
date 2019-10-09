@@ -1,0 +1,2 @@
+class Instrumento < ApplicationRecord
+end

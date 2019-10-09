@@ -1,0 +1,1445 @@
+  [1m[35m (112.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (321.9ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-09-26 17:55:51.781389"], ["updated_at", "2019-09-26 17:55:51.781389"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83e6e9510955ef04f606b0339b1f0d53760104f9"], ["created_at", "2019-09-26 17:55:51.790405"], ["updated_at", "2019-09-26 17:55:51.790405"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/events" for 127.0.0.1 at 2019-09-26 16:37:18 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/events" for 127.0.0.1 at 2019-09-26 16:40:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#create as HTML
+  Rendering event/create.html.erb within layouts/application
+  Rendered event/create.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1121)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 5735)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/events" for 127.0.0.1 at 2019-09-26 16:51:13 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1229)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5370)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/events" for 127.0.0.1 at 2019-09-26 23:29:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (112.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (289.1ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:10:25.760359"], ["updated_at", "2019-10-08 19:10:25.760359"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:10:25.775070"], ["updated_at", "2019-10-08 19:10:25.775070"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (105.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (262.1ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:14:52.007651"], ["updated_at", "2019-10-08 19:14:52.007651"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:14:52.018636"], ["updated_at", "2019-10-08 19:14:52.018636"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (120.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (262.6ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:22:42.514024"], ["updated_at", "2019-10-08 19:22:42.514024"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:22:42.521031"], ["updated_at", "2019-10-08 19:22:42.521031"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (112.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (257.4ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:27:09.418037"], ["updated_at", "2019-10-08 19:27:09.418037"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:27:09.430403"], ["updated_at", "2019-10-08 19:27:09.430403"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (113.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (263.4ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:32:37.402205"], ["updated_at", "2019-10-08 19:32:37.402205"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:32:37.411443"], ["updated_at", "2019-10-08 19:32:37.411443"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (119.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (266.5ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-08 19:33:07.851425"], ["updated_at", "2019-10-08 19:33:07.851425"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:33:07.857445"], ["updated_at", "2019-10-08 19:33:07.857445"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (65.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (429.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (1330.9ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (116.1ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (87.5ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (97.3ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" timestamp, "data_limite_inscricao" timestamp, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (87.7ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" date, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (75.2ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "musicos" CASCADE[0m
+  [1m[35m (97.2ms)[0m  [1m[35mCREATE TABLE "musicos" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" integer, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (86.6ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (97.6ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (87.1ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (85.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (22.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191008045528)[0m
+  [1m[35m (43.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310);
+
+[0m
+  [1m[35m (197.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-09 14:02:43.887068"], ["updated_at", "2019-10-09 14:02:43.887068"]]
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "232f80ae7c1f0dc050e5b94247e93910d050cf36"], ["created_at", "2019-10-09 14:02:43.918410"], ["updated_at", "2019-10-09 14:02:43.918410"]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "avaliacaos" DISABLE TRIGGER ALL;ALTER TABLE "contatos" DISABLE TRIGGER ALL;ALTER TABLE "estabelecimentos" DISABLE TRIGGER ALL;ALTER TABLE "eventos" DISABLE TRIGGER ALL;ALTER TABLE "generos" DISABLE TRIGGER ALL;ALTER TABLE "grupo_musicals" DISABLE TRIGGER ALL;ALTER TABLE "instrumentos" DISABLE TRIGGER ALL;ALTER TABLE "musicos" DISABLE TRIGGER ALL;ALTER TABLE "negociacaos" DISABLE TRIGGER ALL;ALTER TABLE "redes" DISABLE TRIGGER ALL;ALTER TABLE "tipo_estabelecimentos" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (6.2ms)[0m  [1m[31mDELETE FROM "estabelecimentos";
+DELETE FROM "instrumentos";
+DELETE FROM "grupo_musicals";
+DELETE FROM "tipo_estabelecimentos";
+DELETE FROM "generos";
+DELETE FROM "negociacaos";
+DELETE FROM "eventos";
+DELETE FROM "contatos";
+DELETE FROM "avaliacaos";
+DELETE FROM "redes";
+INSERT INTO "estabelecimentos" ("id", "nome", "nome_proprietario", "email", "senha", "descricao", "capacidade", "endereco", "numero", "cidade", "estado", "pais", "cnpj", "telefone", "imagem", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', 1, 'MyString', 1, 'MyString', 'MyString', 'MyString', 1, 1, NULL, '2019-10-09 14:02:44.258141', '2019-10-09 14:02:44.258141'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', 1, 'MyString', 1, 'MyString', 'MyString', 'MyString', 1, 1, NULL, '2019-10-09 14:02:44.258141', '2019-10-09 14:02:44.258141');
+INSERT INTO "instrumentos" ("id", "nome_instrumento", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-10-09 14:02:44.268545', '2019-10-09 14:02:44.268545'), (298486374, 'MyText', '2019-10-09 14:02:44.268545', '2019-10-09 14:02:44.268545');
+INSERT INTO "grupo_musicals" ("id", "nome", "sobrenome", "nome_artistico", "email", "senha", "data_nascimento", "endereco", "numero", "cep", "cidade", "estado", "pais", "telefone", "biografia", "salario_hora", "imagens", "video", "cpf", "pontos", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2019-10-07', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', 1, 'MyText', 1.5, NULL, NULL, 1, 1, '2019-10-09 14:02:44.274324', '2019-10-09 14:02:44.274324'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2019-10-07', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', 1, 'MyText', 1.5, NULL, NULL, 1, 1, '2019-10-09 14:02:44.274324', '2019-10-09 14:02:44.274324');
+INSERT INTO "tipo_estabelecimentos" ("id", "nome_tipo", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-10-09 14:02:44.279587', '2019-10-09 14:02:44.279587'), (298486374, 'MyText', '2019-10-09 14:02:44.279587', '2019-10-09 14:02:44.279587');
+INSERT INTO "generos" ("id", "nome_genero", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-10-09 14:02:44.284542', '2019-10-09 14:02:44.284542'), (298486374, 'MyText', '2019-10-09 14:02:44.284542', '2019-10-09 14:02:44.284542');
+INSERT INTO "negociacaos" ("id", "salario_combinado", "status_negociacao", "created_at", "updated_at") VALUES (980190962, 1.5, 'MyString', '2019-10-09 14:02:44.289466', '2019-10-09 14:02:44.289466'), (298486374, 1.5, 'MyString', '2019-10-09 14:02:44.289466', '2019-10-09 14:02:44.289466');
+INSERT INTO "eventos" ("id", "nome", "data_evento", "data_limite_inscricao", "capacidade", "imagem", "descricao", "created_at", "updated_at") VALUES (980190962, 'MyString', '2019-10-08', NULL, 1, NULL, 'MyText', '2019-10-09 14:02:44.294297', '2019-10-09 14:02:44.294297'), (298486374, 'MyString', '2019-10-08', NULL, 1, NULL, 'MyText', '2019-10-09 14:02:44.294297', '2019-10-09 14:02:44.294297');
+INSERT INTO "contatos" ("id", "nome_contato", "email_contato", "telefone", "texto", "created_at", "updated_at") VALUES (980190962, 'MyText', 'MyText', 1, 'MyText', '2019-10-09 14:02:44.299239', '2019-10-09 14:02:44.299239'), (298486374, 'MyText', 'MyText', 1, 'MyText', '2019-10-09 14:02:44.299239', '2019-10-09 14:02:44.299239');
+INSERT INTO "avaliacaos" ("id", "avaliacao_texto", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-10-09 14:02:44.304051', '2019-10-09 14:02:44.304051'), (298486374, 'MyText', '2019-10-09 14:02:44.304051', '2019-10-09 14:02:44.304051');
+INSERT INTO "redes" ("id", "nome_rede", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-10-09 14:02:44.308915', '2019-10-09 14:02:44.308915'), (298486374, 'MyText', '2019-10-09 14:02:44.308915', '2019-10-09 14:02:44.308915')[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "avaliacaos" ENABLE TRIGGER ALL;ALTER TABLE "contatos" ENABLE TRIGGER ALL;ALTER TABLE "estabelecimentos" ENABLE TRIGGER ALL;ALTER TABLE "eventos" ENABLE TRIGGER ALL;ALTER TABLE "generos" ENABLE TRIGGER ALL;ALTER TABLE "grupo_musicals" ENABLE TRIGGER ALL;ALTER TABLE "instrumentos" ENABLE TRIGGER ALL;ALTER TABLE "musicos" ENABLE TRIGGER ALL;ALTER TABLE "negociacaos" ENABLE TRIGGER ALL;ALTER TABLE "redes" ENABLE TRIGGER ALL;ALTER TABLE "tipo_estabelecimentos" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+GrupoMusicalsControllerTest: test_should_get_edit
+-------------------------------------------------
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/grupo_musicals/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:44 -0300
+Processing by GrupoMusicalsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGrupoMusical Load (0.5ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering grupo_musicals/edit.html.erb within layouts/application
+  Rendered grupo_musicals/_form.html.erb (Duration: 1028.5ms | Allocations: 46747)
+  Rendered grupo_musicals/edit.html.erb within layouts/application (Duration: 1031.7ms | Allocations: 47376)
+Completed 500 Internal Server Error in 1086ms (ActiveRecord: 0.5ms | Allocations: 50475)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+GrupoMusicalsControllerTest: test_should_show_grupo_musical
+-----------------------------------------------------------
+  [1m[36mGrupoMusical Load (0.6ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/grupo_musicals/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGrupoMusical Load (0.7ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering grupo_musicals/show.html.erb within layouts/application
+  Rendered grupo_musicals/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 715)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 1516)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+GrupoMusicalsControllerTest: test_should_update_grupo_musical
+-------------------------------------------------------------
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/grupo_musicals/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#update as HTML
+  Parameters: {"grupo_musical"=>{"biografia"=>"MyText", "cep"=>"1", "cidade"=>"MyString", "cpf"=>"1", "data_nascimento"=>"2019-10-07", "email"=>"MyString", "endereco"=>"MyString", "estado"=>"MyString", "imagens"=>nil, "nome"=>"MyString", "nome_artistico"=>"MyString", "numero"=>"1", "pais"=>"MyString", "pontos"=>"1", "salario_hora"=>"1.5", "senha"=>"MyString", "sobrenome"=>"MyString", "telefone"=>"1", "video"=>nil}, "id"=>"980190962"}
+  [1m[36mGrupoMusical Load (0.6ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/grupo_musicals/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1162)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+GrupoMusicalsControllerTest: test_should_get_new
+------------------------------------------------
+  [1m[36mGrupoMusical Load (0.2ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/grupo_musicals/new" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#new as HTML
+  Rendering grupo_musicals/new.html.erb within layouts/application
+  Rendered grupo_musicals/_form.html.erb (Duration: 26.4ms | Allocations: 14721)
+  Rendered grupo_musicals/new.html.erb within layouts/application (Duration: 27.1ms | Allocations: 14903)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 15399)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+GrupoMusicalsControllerTest: test_should_destroy_grupo_musical
+--------------------------------------------------------------
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "grupo_musicals"[0m
+Started DELETE "/grupo_musicals/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGrupoMusical Destroy (0.5ms)[0m  [1m[31mDELETE FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/grupo_musicals
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms | Allocations: 593)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "grupo_musicals"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+GrupoMusicalsControllerTest: test_should_get_index
+--------------------------------------------------
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/grupo_musicals" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#index as HTML
+  Rendering grupo_musicals/index.html.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.5ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals"[0m
+  Rendered grupo_musicals/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1098)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 1586)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+GrupoMusicalsControllerTest: test_should_create_grupo_musical
+-------------------------------------------------------------
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "grupo_musicals"[0m
+Started POST "/grupo_musicals" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"grupo_musical"=>{"biografia"=>"MyText", "cep"=>"1", "cidade"=>"MyString", "cpf"=>"1", "data_nascimento"=>"2019-10-07", "email"=>"MyString", "endereco"=>"MyString", "estado"=>"MyString", "imagens"=>nil, "nome"=>"MyString", "nome_artistico"=>"MyString", "numero"=>"1", "pais"=>"MyString", "pontos"=>"1", "salario_hora"=>"1.5", "senha"=>"MyString", "sobrenome"=>"MyString", "telefone"=>"1", "video"=>nil}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGrupoMusical Create (0.5ms)[0m  [1m[32mINSERT INTO "grupo_musicals" ("nome", "sobrenome", "nome_artistico", "email", "senha", "data_nascimento", "endereco", "numero", "cep", "cidade", "estado", "pais", "telefone", "biografia", "salario_hora", "cpf", "pontos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["nome", "MyString"], ["sobrenome", "MyString"], ["nome_artistico", "MyString"], ["email", "MyString"], ["senha", "MyString"], ["data_nascimento", "2019-10-07"], ["endereco", "MyString"], ["numero", 1], ["cep", 1], ["cidade", "MyString"], ["estado", "MyString"], ["pais", "MyString"], ["telefone", 1], ["biografia", "MyText"], ["salario_hora", 1.5], ["cpf", 1], ["pontos", 1], ["created_at", "2019-10-09 14:02:46.270294"], ["updated_at", "2019-10-09 14:02:46.270294"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/grupo_musicals/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms | Allocations: 1241)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "grupo_musicals"[0m
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" ORDER BY "grupo_musicals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+ContatosControllerTest: test_should_destroy_contato
+---------------------------------------------------
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contatos"[0m
+Started DELETE "/contatos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mContato Destroy (0.3ms)[0m  [1m[31mDELETE FROM "contatos" WHERE "contatos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/contatos
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 691)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "contatos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+ContatosControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mContato Load (0.4ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/contatos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mContato Load (0.9ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering contatos/edit.html.erb within layouts/application
+  Rendered contatos/_form.html.erb (Duration: 8.5ms | Allocations: 3359)
+  Rendered contatos/edit.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3731)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.9ms | Allocations: 4892)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ContatosControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mContato Load (0.4ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/contatos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#index as HTML
+  Rendering contatos/index.html.erb within layouts/application
+  [1m[36mContato Load (0.4ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 716)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1198)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+ContatosControllerTest: test_should_update_contato
+--------------------------------------------------
+  [1m[36mContato Load (0.4ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/contatos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#update as HTML
+  Parameters: {"contato"=>{"email_contato"=>"MyText", "nome_contato"=>"MyText", "telefone"=>"1", "texto"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/contatos/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 643)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+ContatosControllerTest: test_should_show_contato
+------------------------------------------------
+  [1m[36mContato Load (0.2ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/contatos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering contatos/show.html.erb within layouts/application
+  Rendered contatos/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 317)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 922)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+ContatosControllerTest: test_should_create_contato
+--------------------------------------------------
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "contatos"[0m
+Started POST "/contatos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#create as HTML
+  Parameters: {"contato"=>{"email_contato"=>"MyText", "nome_contato"=>"MyText", "telefone"=>"1", "texto"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mContato Create (0.6ms)[0m  [1m[32mINSERT INTO "contatos" ("nome_contato", "email_contato", "telefone", "texto", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nome_contato", "MyText"], ["email_contato", "MyText"], ["telefone", 1], ["texto", "MyText"], ["created_at", "2019-10-09 14:02:46.385847"], ["updated_at", "2019-10-09 14:02:46.385847"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/contatos/980190963
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms | Allocations: 753)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "contatos"[0m
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" ORDER BY "contatos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+ContatosControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mContato Load (0.3ms)[0m  [1m[34mSELECT "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/contatos/new" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by ContatosController#new as HTML
+  Rendering contatos/new.html.erb within layouts/application
+  Rendered contatos/_form.html.erb (Duration: 4.6ms | Allocations: 2862)
+  Rendered contatos/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3051)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3552)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+AvaliacaosControllerTest: test_should_get_index
+-----------------------------------------------
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/avaliacaos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#index as HTML
+  Rendering avaliacaos/index.html.erb within layouts/application
+  [1m[36mAvaliacao Load (0.8ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos"[0m
+  Rendered avaliacaos/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 696)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 1789)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+AvaliacaosControllerTest: test_should_create_avaliacao
+------------------------------------------------------
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "avaliacaos"[0m
+Started POST "/avaliacaos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#create as HTML
+  Parameters: {"avaliacao"=>{"avaliacao_texto"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvaliacao Create (0.5ms)[0m  [1m[32mINSERT INTO "avaliacaos" ("avaliacao_texto", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["avaliacao_texto", "MyText"], ["created_at", "2019-10-09 14:02:46.444731"], ["updated_at", "2019-10-09 14:02:46.444731"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/avaliacaos/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 694)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "avaliacaos"[0m
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" ORDER BY "avaliacaos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+AvaliacaosControllerTest: test_should_show_avaliacao
+----------------------------------------------------
+  [1m[36mAvaliacao Load (0.4ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/avaliacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAvaliacao Load (0.4ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering avaliacaos/show.html.erb within layouts/application
+  Rendered avaliacaos/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 243)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 942)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+AvaliacaosControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36mAvaliacao Load (0.4ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/avaliacaos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAvaliacao Load (0.4ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering avaliacaos/edit.html.erb within layouts/application
+  Rendered avaliacaos/_form.html.erb (Duration: 2.8ms | Allocations: 1247)
+  Rendered avaliacaos/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1619)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 2225)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+AvaliacaosControllerTest: test_should_get_new
+---------------------------------------------
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/avaliacaos/new" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#new as HTML
+  Rendering avaliacaos/new.html.erb within layouts/application
+  Rendered avaliacaos/_form.html.erb (Duration: 1.9ms | Allocations: 979)
+  Rendered avaliacaos/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1169)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1667)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+AvaliacaosControllerTest: test_should_destroy_avaliacao
+-------------------------------------------------------
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "avaliacaos"[0m
+Started DELETE "/avaliacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAvaliacao Destroy (0.4ms)[0m  [1m[31mDELETE FROM "avaliacaos" WHERE "avaliacaos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/avaliacaos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 522)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "avaliacaos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+AvaliacaosControllerTest: test_should_update_avaliacao
+------------------------------------------------------
+  [1m[36mAvaliacao Load (0.2ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/avaliacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by AvaliacaosController#update as HTML
+  Parameters: {"avaliacao"=>{"avaliacao_texto"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mAvaliacao Load (0.3ms)[0m  [1m[34mSELECT "avaliacaos".* FROM "avaliacaos" WHERE "avaliacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/avaliacaos/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 535)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+NegociacaosControllerTest: test_should_create_negociacao
+--------------------------------------------------------
+  [1m[36mNegociacao Load (0.4ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "negociacaos"[0m
+Started POST "/negociacaos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#create as HTML
+  Parameters: {"negociacao"=>{"salario_combinado"=>"1.5", "status_negociacao"=>"MyString"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mNegociacao Create (0.5ms)[0m  [1m[32mINSERT INTO "negociacaos" ("salario_combinado", "status_negociacao", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["salario_combinado", 1.5], ["status_negociacao", "MyString"], ["created_at", "2019-10-09 14:02:46.540401"], ["updated_at", "2019-10-09 14:02:46.540401"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/negociacaos/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 838)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "negociacaos"[0m
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" ORDER BY "negociacaos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+NegociacaosControllerTest: test_should_destroy_negociacao
+---------------------------------------------------------
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "negociacaos"[0m
+Started DELETE "/negociacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mNegociacao Load (0.4ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mNegociacao Destroy (0.4ms)[0m  [1m[31mDELETE FROM "negociacaos" WHERE "negociacaos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/negociacaos
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms | Allocations: 626)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "negociacaos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+NegociacaosControllerTest: test_should_show_negociacao
+------------------------------------------------------
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/negociacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mNegociacao Load (0.4ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering negociacaos/show.html.erb within layouts/application
+  Rendered negociacaos/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 269)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1415)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+NegociacaosControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[36mNegociacao Load (0.5ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/negociacaos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering negociacaos/edit.html.erb within layouts/application
+  Rendered negociacaos/_form.html.erb (Duration: 4.7ms | Allocations: 2111)
+  Rendered negociacaos/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2483)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 3091)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+NegociacaosControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/negociacaos/new" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#new as HTML
+  Rendering negociacaos/new.html.erb within layouts/application
+  Rendered negociacaos/_form.html.erb (Duration: 2.7ms | Allocations: 1640)
+  Rendered negociacaos/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1830)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2329)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+NegociacaosControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/negociacaos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#index as HTML
+  Rendering negociacaos/index.html.erb within layouts/application
+  [1m[36mNegociacao Load (0.4ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos"[0m
+  Rendered negociacaos/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 665)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1147)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+NegociacaosControllerTest: test_should_update_negociacao
+--------------------------------------------------------
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/negociacaos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by NegociacaosController#update as HTML
+  Parameters: {"negociacao"=>{"salario_combinado"=>"1.5", "status_negociacao"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mNegociacao Load (0.3ms)[0m  [1m[34mSELECT "negociacaos".* FROM "negociacaos" WHERE "negociacaos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/negociacaos/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 556)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+EstabelecimentosControllerTest: test_should_get_edit
+----------------------------------------------------
+  [1m[36mEstabelecimento Load (0.4ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/estabelecimentos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEstabelecimento Load (0.5ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering estabelecimentos/edit.html.erb within layouts/application
+  Rendered estabelecimentos/_form.html.erb (Duration: 24.2ms | Allocations: 14187)
+  Rendered estabelecimentos/edit.html.erb within layouts/application (Duration: 25.5ms | Allocations: 14525)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.5ms | Allocations: 15843)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+EstabelecimentosControllerTest: test_should_get_index
+-----------------------------------------------------
+  [1m[36mEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/estabelecimentos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#index as HTML
+  Rendering estabelecimentos/index.html.erb within layouts/application
+  [1m[36mEstabelecimento Load (0.6ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos"[0m
+  Rendered estabelecimentos/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 959)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.6ms | Allocations: 1441)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+EstabelecimentosControllerTest: test_should_get_new
+---------------------------------------------------
+  [1m[36mEstabelecimento Load (0.5ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/estabelecimentos/new" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#new as HTML
+  Rendering estabelecimentos/new.html.erb within layouts/application
+  Rendered estabelecimentos/_form.html.erb (Duration: 25.1ms | Allocations: 12354)
+  Rendered estabelecimentos/new.html.erb within layouts/application (Duration: 25.9ms | Allocations: 12536)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 13013)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------
+EstabelecimentosControllerTest: test_should_show_estabelecimento
+----------------------------------------------------------------
+  [1m[36mEstabelecimento Load (0.5ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEstabelecimento Load (0.5ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering estabelecimentos/show.html.erb within layouts/application
+  Rendered estabelecimentos/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 557)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1188)
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------
+EstabelecimentosControllerTest: test_should_update_estabelecimento
+------------------------------------------------------------------
+  [1m[36mEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#update as HTML
+  Parameters: {"estabelecimento"=>{"capacidade"=>"1", "cidade"=>"MyString", "cnpj"=>"1", "descricao"=>"MyText", "email"=>"MyString", "endereco"=>"MyString", "estado"=>"MyString", "imagem"=>nil, "nome"=>"MyString", "nome_proprietario"=>"MyString", "numero"=>"1", "pais"=>"MyString", "senha"=>"MyString", "telefone"=>"1"}, "id"=>"980190962"}
+  [1m[36mEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/estabelecimentos/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 887)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------
+EstabelecimentosControllerTest: test_should_destroy_estabelecimento
+-------------------------------------------------------------------
+  [1m[36mEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "estabelecimentos"[0m
+Started DELETE "/estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEstabelecimento Load (0.4ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEstabelecimento Destroy (0.5ms)[0m  [1m[31mDELETE FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/estabelecimentos
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms | Allocations: 556)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "estabelecimentos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------
+EstabelecimentosControllerTest: test_should_create_estabelecimento
+------------------------------------------------------------------
+  [1m[36mEstabelecimento Load (0.2ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" WHERE "estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "estabelecimentos"[0m
+Started POST "/estabelecimentos" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by EstabelecimentosController#create as HTML
+  Parameters: {"estabelecimento"=>{"capacidade"=>"1", "cidade"=>"MyString", "cnpj"=>"1", "descricao"=>"MyText", "email"=>"MyString", "endereco"=>"MyString", "estado"=>"MyString", "imagem"=>nil, "nome"=>"MyString", "nome_proprietario"=>"MyString", "numero"=>"1", "pais"=>"MyString", "senha"=>"MyString", "telefone"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEstabelecimento Create (0.5ms)[0m  [1m[32mINSERT INTO "estabelecimentos" ("nome", "nome_proprietario", "email", "senha", "descricao", "capacidade", "endereco", "numero", "cidade", "estado", "pais", "cnpj", "telefone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["nome", "MyString"], ["nome_proprietario", "MyString"], ["email", "MyString"], ["senha", "MyString"], ["descricao", "MyText"], ["capacidade", 1], ["endereco", "MyString"], ["numero", 1], ["cidade", "MyString"], ["estado", "MyString"], ["pais", "MyString"], ["cnpj", 1], ["telefone", 1], ["created_at", "2019-10-09 14:02:46.828566"], ["updated_at", "2019-10-09 14:02:46.828566"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/estabelecimentos/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1051)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "estabelecimentos"[0m
+  [1m[36mEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "estabelecimentos".* FROM "estabelecimentos" ORDER BY "estabelecimentos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/home" for 127.0.0.1 at 2019-10-09 11:02:46 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9755.8ms | Allocations: 1503893)
+Completed 200 OK in 9758ms (Views: 9757.4ms | ActiveRecord: 0.0ms | Allocations: 1504968)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+InstrumentosControllerTest: test_should_get_new
+-----------------------------------------------
+  [1m[36mInstrumento Load (0.2ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/instrumentos/new" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#new as HTML
+  Rendering instrumentos/new.html.erb within layouts/application
+  Rendered instrumentos/_form.html.erb (Duration: 3.2ms | Allocations: 1273)
+  Rendered instrumentos/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1605)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 2708)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+InstrumentosControllerTest: test_should_show_instrumento
+--------------------------------------------------------
+  [1m[36mInstrumento Load (0.2ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/instrumentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mInstrumento Load (0.7ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering instrumentos/show.html.erb within layouts/application
+  Rendered instrumentos/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 244)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 949)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------
+InstrumentosControllerTest: test_should_create_instrumento
+----------------------------------------------------------
+  [1m[36mInstrumento Load (0.2ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "instrumentos"[0m
+Started POST "/instrumentos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#create as HTML
+  Parameters: {"instrumento"=>{"nome_instrumento"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInstrumento Create (0.4ms)[0m  [1m[32mINSERT INTO "instrumentos" ("nome_instrumento", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome_instrumento", "MyText"], ["created_at", "2019-10-09 14:02:56.648231"], ["updated_at", "2019-10-09 14:02:56.648231"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/instrumentos/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 694)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "instrumentos"[0m
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" ORDER BY "instrumentos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+InstrumentosControllerTest: test_should_destroy_instrumento
+-----------------------------------------------------------
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "instrumentos"[0m
+Started DELETE "/instrumentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInstrumento Destroy (0.3ms)[0m  [1m[31mDELETE FROM "instrumentos" WHERE "instrumentos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/instrumentos
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 522)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "instrumentos"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------
+InstrumentosControllerTest: test_should_update_instrumento
+----------------------------------------------------------
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/instrumentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#update as HTML
+  Parameters: {"instrumento"=>{"nome_instrumento"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/instrumentos/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 535)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+InstrumentosControllerTest: test_should_get_edit
+------------------------------------------------
+  [1m[36mInstrumento Load (0.2ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/instrumentos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mInstrumento Load (0.2ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering instrumentos/edit.html.erb within layouts/application
+  Rendered instrumentos/_form.html.erb (Duration: 2.0ms | Allocations: 1010)
+  Rendered instrumentos/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1247)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1853)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+InstrumentosControllerTest: test_should_get_index
+-------------------------------------------------
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos" WHERE "instrumentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/instrumentos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by InstrumentosController#index as HTML
+  Rendering instrumentos/index.html.erb within layouts/application
+  [1m[36mInstrumento Load (0.3ms)[0m  [1m[34mSELECT "instrumentos".* FROM "instrumentos"[0m
+  Rendered instrumentos/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 642)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1124)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_get_new
+-------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.2ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/tipo_estabelecimentos/new" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#new as HTML
+  Rendering tipo_estabelecimentos/new.html.erb within layouts/application
+  Rendered tipo_estabelecimentos/_form.html.erb (Duration: 2.5ms | Allocations: 1307)
+  Rendered tipo_estabelecimentos/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1630)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 2727)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_destroy_tipo_estabelecimento
+----------------------------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tipo_estabelecimentos"[0m
+Started DELETE "/tipo_estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTipoEstabelecimento Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_estabelecimentos
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 624)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tipo_estabelecimentos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_show_tipo_estabelecimento
+-------------------------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/tipo_estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering tipo_estabelecimentos/show.html.erb within layouts/application
+  Rendered tipo_estabelecimentos/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 244)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 839)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_create_tipo_estabelecimento
+---------------------------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.4ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tipo_estabelecimentos"[0m
+Started POST "/tipo_estabelecimentos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#create as HTML
+  Parameters: {"tipo_estabelecimento"=>{"nome_tipo"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTipoEstabelecimento Create (0.4ms)[0m  [1m[32mINSERT INTO "tipo_estabelecimentos" ("nome_tipo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome_tipo", "MyText"], ["created_at", "2019-10-09 14:02:56.765349"], ["updated_at", "2019-10-09 14:02:56.765349"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_estabelecimentos/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 694)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tipo_estabelecimentos"[0m
+  [1m[36mTipoEstabelecimento Load (0.4ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" ORDER BY "tipo_estabelecimentos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_get_edit
+--------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.6ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/tipo_estabelecimentos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering tipo_estabelecimentos/edit.html.erb within layouts/application
+  Rendered tipo_estabelecimentos/_form.html.erb (Duration: 3.0ms | Allocations: 1019)
+  Rendered tipo_estabelecimentos/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1257)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 1861)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_update_tipo_estabelecimento
+---------------------------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.2ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/tipo_estabelecimentos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#update as HTML
+  Parameters: {"tipo_estabelecimento"=>{"nome_tipo"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mTipoEstabelecimento Load (0.3ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/tipo_estabelecimentos/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 535)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------
+TipoEstabelecimentosControllerTest: test_should_get_index
+---------------------------------------------------------
+  [1m[36mTipoEstabelecimento Load (0.2ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos" WHERE "tipo_estabelecimentos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/tipo_estabelecimentos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by TipoEstabelecimentosController#index as HTML
+  Rendering tipo_estabelecimentos/index.html.erb within layouts/application
+  [1m[36mTipoEstabelecimento Load (0.4ms)[0m  [1m[34mSELECT "tipo_estabelecimentos".* FROM "tipo_estabelecimentos"[0m
+  Rendered tipo_estabelecimentos/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 647)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1127)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+GenerosControllerTest: test_should_destroy_genero
+-------------------------------------------------
+  [1m[36mGenero Load (0.3ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "generos"[0m
+Started DELETE "/generos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGenero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "generos" WHERE "generos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/generos
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms | Allocations: 683)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "generos"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+GenerosControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mGenero Load (0.3ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/generos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering generos/edit.html.erb within layouts/application
+  Rendered generos/_form.html.erb (Duration: 3.2ms | Allocations: 1290)
+  Rendered generos/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1662)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 2815)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+GenerosControllerTest: test_should_show_genero
+----------------------------------------------
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/generos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering generos/show.html.erb within layouts/application
+  Rendered generos/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 242)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 839)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+GenerosControllerTest: test_should_update_genero
+------------------------------------------------
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/generos/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#update as HTML
+  Parameters: {"genero"=>{"nome_genero"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mGenero Load (0.3ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/generos/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 569)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+GenerosControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mGenero Load (0.2ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/generos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#index as HTML
+  Rendering generos/index.html.erb within layouts/application
+  [1m[36mGenero Load (0.4ms)[0m  [1m[34mSELECT "generos".* FROM "generos"[0m
+  Rendered generos/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 646)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1129)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+GenerosControllerTest: test_should_create_genero
+------------------------------------------------
+  [1m[36mGenero Load (0.3ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "generos"[0m
+Started POST "/generos" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#create as HTML
+  Parameters: {"genero"=>{"nome_genero"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGenero Create (0.3ms)[0m  [1m[32mINSERT INTO "generos" ("nome_genero", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome_genero", "MyText"], ["created_at", "2019-10-09 14:02:56.930012"], ["updated_at", "2019-10-09 14:02:56.930012"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/generos/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms | Allocations: 660)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "generos"[0m
+  [1m[36mGenero Load (0.2ms)[0m  [1m[34mSELECT "generos".* FROM "generos" ORDER BY "generos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+GenerosControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mGenero Load (0.2ms)[0m  [1m[34mSELECT "generos".* FROM "generos" WHERE "generos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/generos/new" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by GenerosController#new as HTML
+  Rendering generos/new.html.erb within layouts/application
+  Rendered generos/_form.html.erb (Duration: 2.2ms | Allocations: 980)
+  Rendered generos/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1169)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1667)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+RedesControllerTest: test_should_destroy_rede
+---------------------------------------------
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "redes"[0m
+Started DELETE "/redes/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by RedesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRede Load (0.4ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRede Destroy (0.4ms)[0m  [1m[31mDELETE FROM "redes" WHERE "redes"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/redes
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms | Allocations: 683)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "redes"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+RedesControllerTest: test_should_show_rede
+------------------------------------------
+  [1m[36mRede Load (0.4ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/redes/980190962" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by RedesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRede Load (0.4ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering redes/show.html.erb within layouts/application
+  Rendered redes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 244)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1389)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+RedesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/redes" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by RedesController#index as HTML
+  Rendering redes/index.html.erb within layouts/application
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes"[0m
+  Rendered redes/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 690)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1172)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+RedesControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/redes/new" for 127.0.0.1 at 2019-10-09 11:02:56 -0300
+Processing by RedesController#new as HTML
+  Rendering redes/new.html.erb within layouts/application
+  Rendered redes/_form.html.erb (Duration: 2.5ms | Allocations: 1208)
+  Rendered redes/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1533)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2032)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+RedesControllerTest: test_should_update_rede
+--------------------------------------------
+  [1m[36mRede Load (0.2ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/redes/980190962" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by RedesController#update as HTML
+  Parameters: {"rede"=>{"nome_rede"=>"MyText"}, "id"=>"980190962"}
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/redes/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 569)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+RedesControllerTest: test_should_create_rede
+--------------------------------------------
+  [1m[36mRede Load (0.2ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "redes"[0m
+Started POST "/redes" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by RedesController#create as HTML
+  Parameters: {"rede"=>{"nome_rede"=>"MyText"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRede Create (0.5ms)[0m  [1m[32mINSERT INTO "redes" ("nome_rede", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome_rede", "MyText"], ["created_at", "2019-10-09 14:02:57.030414"], ["updated_at", "2019-10-09 14:02:57.030414"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/redes/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 660)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "redes"[0m
+  [1m[36mRede Load (0.3ms)[0m  [1m[34mSELECT "redes".* FROM "redes" ORDER BY "redes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+RedesControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mRede Load (0.2ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/redes/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by RedesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRede Load (0.2ms)[0m  [1m[34mSELECT "redes".* FROM "redes" WHERE "redes"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering redes/edit.html.erb within layouts/application
+  Rendered redes/_form.html.erb (Duration: 2.1ms | Allocations: 1006)
+  Rendered redes/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1242)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1849)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+EventosControllerTest: test_should_update_evento
+------------------------------------------------
+  [1m[36mEvento Load (0.4ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/eventos/980190962" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#update as HTML
+  Parameters: {"evento"=>{"capacidade"=>"1", "data_evento"=>"2019-10-08 00:00:00 UTC", "data_limite_inscricao"=>nil, "descricao"=>"MyText", "imagem"=>nil, "nome"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mEvento Load (0.5ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/eventos/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 967)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventosControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mEvento Load (0.3ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/eventos/980190962/edit" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvento Load (0.4ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering eventos/edit.html.erb within layouts/application
+  Rendered eventos/_form.html.erb (Duration: 40.2ms | Allocations: 13267)
+  Rendered eventos/edit.html.erb within layouts/application (Duration: 41.2ms | Allocations: 13600)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.4ms | Allocations: 14731)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+EventosControllerTest: test_should_destroy_evento
+-------------------------------------------------
+  [1m[36mEvento Load (0.4ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "eventos"[0m
+Started DELETE "/eventos/980190962" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvento Load (0.5ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvento Destroy (0.4ms)[0m  [1m[31mDELETE FROM "eventos" WHERE "eventos"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/eventos
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 534)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "eventos"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+EventosControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mEvento Load (0.2ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/eventos/new" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#new as HTML
+  Rendering eventos/new.html.erb within layouts/application
+  Rendered eventos/_form.html.erb (Duration: 19.5ms | Allocations: 10725)
+  Rendered eventos/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 10906)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 11375)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventosControllerTest: test_should_show_evento
+----------------------------------------------
+  [1m[36mEvento Load (0.3ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/eventos/980190962" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvento Load (0.3ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering eventos/show.html.erb within layouts/application
+  Rendered eventos/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 366)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 975)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventosControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mEvento Load (0.2ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/eventos" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#index as HTML
+  Rendering eventos/index.html.erb within layouts/application
+  [1m[36mEvento Load (0.4ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos"[0m
+  Rendered eventos/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 765)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1247)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+EventosControllerTest: test_should_create_evento
+------------------------------------------------
+  [1m[36mEvento Load (0.3ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" WHERE "eventos"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "eventos"[0m
+Started POST "/eventos" for 127.0.0.1 at 2019-10-09 11:02:57 -0300
+Processing by EventosController#create as HTML
+  Parameters: {"evento"=>{"capacidade"=>"1", "data_evento"=>"2019-10-08 00:00:00 UTC", "data_limite_inscricao"=>nil, "descricao"=>"MyText", "imagem"=>nil, "nome"=>"MyString"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvento Create (0.4ms)[0m  [1m[32mINSERT INTO "eventos" ("nome", "data_evento", "capacidade", "descricao", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nome", "MyString"], ["data_evento", "2019-10-08 00:00:00"], ["capacidade", 1], ["descricao", "MyText"], ["created_at", "2019-10-09 14:02:57.224888"], ["updated_at", "2019-10-09 14:02:57.224888"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/eventos/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms | Allocations: 842)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "eventos"[0m
+  [1m[36mEvento Load (0.3ms)[0m  [1m[34mSELECT "eventos".* FROM "eventos" ORDER BY "eventos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
