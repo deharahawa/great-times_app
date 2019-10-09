@@ -19,8 +19,8 @@
     <%= f.input :telefone %>
     <%= f.input :biografia %>
     <%= f.input :salario_hora %>
-    <%= f.input :imagens %>
-    <%= f.input :video %>
+    <%= f.input :imagem, as: :file, label: "Upload an image" %>
+    <%= f.input :video, as: :file, label: "Upload an video" %>
     <%= f.input :cpf %>
     <%= f.input :pontos %>
   </div>
