@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'grupo_musicals/search' => 'grupo_musicals#search', as: 'grupo_musicals/search'
+
   resources :home
   resources :eventos
   resources :estabelecimentos

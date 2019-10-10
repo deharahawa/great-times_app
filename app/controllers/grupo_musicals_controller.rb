@@ -7,6 +7,10 @@ class GrupoMusicalsController < ApplicationController
     @grupo_musicals = GrupoMusical.all
   end
 
+  def search 
+    @grupo_musicals = GrupoMusical.where("nome LIKE ?", "%" + params[:nome] + "%")
+  end
+
   # GET /grupo_musicals/1
   # GET /grupo_musicals/1.json
   def show

@@ -44982,3 +44982,406 @@ Processing by EstabelecimentosController#new as HTML
 Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms | Allocations: 14653)
 
 
+Started GET "/" for ::1 at 2019-10-09 11:26:40 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 39.0ms | Allocations: 32907)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms | Allocations: 34431)
+
+
+Started GET "/" for ::1 at 2019-10-09 11:27:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 35.9ms | Allocations: 32907)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.0ms | Allocations: 34427)
+
+
+Started GET "/grupo_musicals/new" for ::1 at 2019-10-09 11:27:23 -0300
+Processing by GrupoMusicalsController#new as HTML
+  Rendering grupo_musicals/new.html.erb within layouts/application
+  Rendered grupo_musicals/_form.html.erb (Duration: 59.1ms | Allocations: 29806)
+  Rendered grupo_musicals/new.html.erb within layouts/application (Duration: 60.1ms | Allocations: 30164)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.0ms | Allocations: 31403)
+
+
+Started GET "/grupo_musicals" for ::1 at 2019-10-09 11:29:40 -0300
+Processing by GrupoMusicalsController#index as HTML
+  Rendering grupo_musicals/index.html.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.8ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals"[0m
+  ↳ app/views/grupo_musicals/index.html.erb:32
+  Rendered grupo_musicals/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1439)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.8ms | Allocations: 2129)
+
+
+Started GET "/grupo_musicals/new" for ::1 at 2019-10-09 11:29:42 -0300
+Processing by GrupoMusicalsController#new as HTML
+  Rendering grupo_musicals/new.html.erb within layouts/application
+  Rendered grupo_musicals/_form.html.erb (Duration: 58.8ms | Allocations: 29314)
+  Rendered grupo_musicals/new.html.erb within layouts/application (Duration: 59.4ms | Allocations: 29411)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.0ms | Allocations: 29965)
+
+
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 11:32:14 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"pzFEACvpYC9RAGV0q66w175xCgY043WCAuLxV9n2pgt1/qBwur+d5FbsQWhCUQUndgV/dUXte1rX9FhYiaNPjQ==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"musical", "nome_artistico"=>"mg", "email"=>"mg@email.com", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"9", "data_nascimento(4i)"=>"14", "data_nascimento(5i)"=>"29", "endereco"=>"rua abc", "numero"=>"123", "cep"=>"00000000", "cidade"=>"sp", "estado"=>"sp", "pais"=>"brasil", "telefone"=>"11999999999", "biografia"=>"eu sou um novo grupo", "salario_hora"=>"10000.00", "cpf"=>"00000000000", "pontos"=>"10"}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3422)
+
+
+  
+ActiveModel::RangeError (11999999999 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+app/controllers/grupo_musicals_controller.rb:29:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 11:34:39 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"pzFEACvpYC9RAGV0q66w175xCgY043WCAuLxV9n2pgt1/qBwur+d5FbsQWhCUQUndgV/dUXte1rX9FhYiaNPjQ==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"musical", "nome_artistico"=>"mg", "email"=>"mg@email.com", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"9", "data_nascimento(4i)"=>"14", "data_nascimento(5i)"=>"29", "endereco"=>"rua abc", "numero"=>"123", "cep"=>"00000000", "cidade"=>"sp", "estado"=>"sp", "pais"=>"brasil", "telefone"=>"11999999999", "biografia"=>"eu sou um novo grupo", "salario_hora"=>"10000.00", "cpf"=>"00000000000", "pontos"=>"10"}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 5.5ms | Allocations: 18775)
+
+
+  
+ActiveModel::RangeError (11999999999 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+app/controllers/grupo_musicals_controller.rb:29:in `create'
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 20:55:38 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"pzFEACvpYC9RAGV0q66w175xCgY043WCAuLxV9n2pgt1/qBwur+d5FbsQWhCUQUndgV/dUXte1rX9FhYiaNPjQ==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"musical", "nome_artistico"=>"mg", "email"=>"mg@email.com", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"9", "data_nascimento(4i)"=>"14", "data_nascimento(5i)"=>"29", "endereco"=>"rua abc", "numero"=>"123", "cep"=>"00000000", "cidade"=>"sp", "estado"=>"sp", "pais"=>"brasil", "telefone"=>"11999999999", "biografia"=>"eu sou um novo grupo", "salario_hora"=>"10000.00", "cpf"=>"00000000000", "pontos"=>"10"}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms | Allocations: 18072)
+
+
+  
+ActiveModel::RangeError (11999999999 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/grupo_musicals_controller.rb:30:in `block in create'
+app/controllers/grupo_musicals_controller.rb:29:in `create'
+Started GET "/grupo_musicals/search" for ::1 at 2019-10-09 21:02:13 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"search"}
+  [1m[36mGrupoMusical Load (0.7ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Completed 404 Not Found in 17ms (ActiveRecord: 1.1ms | Allocations: 5975)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Started GET "/grupo_musicals/fimd" for ::1 at 2019-10-09 21:02:23 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"fimd"}
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1190)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=fimd):
+  
+app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Started GET "/grupo_musicals/find" for ::1 at 2019-10-09 21:02:27 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"find"}
+  [1m[36mGrupoMusical Load (0.6ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1190)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=find):
+  
+app/controllers/grupo_musicals_controller.rb:67:in `set_grupo_musical'
+Started GET "/grupo_musicals/search?email=grupo" for ::1 at 2019-10-09 21:45:42 -0300
+  
+SyntaxError (/home/ricardo/projetos/engenharia/great-times_app/app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/grupo_musicals/search?email=grupo" for ::1 at 2019-10-09 21:47:35 -0300
+  
+SyntaxError (/home/ricardo/projetos/engenharia/great-times_app/app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/grupo_musicals/search?email=grupo" for ::1 at 2019-10-09 21:47:36 -0300
+  
+SyntaxError (/home/ricardo/projetos/engenharia/great-times_app/app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/grupo_musicals/search?email=grupo@email.com" for ::1 at 2019-10-09 21:47:59 -0300
+  
+SyntaxError (/home/ricardo/projetos/engenharia/great-times_app/app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 21:49:00 -0300
+  
+SyntaxError (/home/ricardo/projetos/engenharia/great-times_app/app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/grupo_musicals_controller.rb:79: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/grupo_musicals/search?email=grupo@email.com" for ::1 at 2019-10-09 21:49:30 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"email"=>"grupo@email.com", "id"=>"search"}
+  [1m[36mGrupoMusical Load (1.1ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 15ms (ActiveRecord: 7.4ms | Allocations: 3363)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 21:50:09 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"pzFEACvpYC9RAGV0q66w175xCgY043WCAuLxV9n2pgt1/qBwur+d5FbsQWhCUQUndgV/dUXte1rX9FhYiaNPjQ==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"musical", "nome_artistico"=>"mg", "email"=>"mg@email.com", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"9", "data_nascimento(4i)"=>"14", "data_nascimento(5i)"=>"29", "endereco"=>"rua abc", "numero"=>"123", "cep"=>"00000000", "cidade"=>"sp", "estado"=>"sp", "pais"=>"brasil", "telefone"=>"11999999999", "biografia"=>"eu sou um novo grupo", "salario_hora"=>"10000.00", "cpf"=>"00000000000", "pontos"=>"10"}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.6ms | Allocations: 18608)
+
+
+  
+ActiveModel::RangeError (11999999999 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+app/controllers/grupo_musicals_controller.rb:33:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to GrupoMusicals (20191010005138)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (146.7ms)[0m  [1m[35mALTER TABLE "grupo_musicals" ALTER COLUMN "telefone" TYPE bigint[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191010005138"]]
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 21:56:48 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"pzFEACvpYC9RAGV0q66w175xCgY043WCAuLxV9n2pgt1/qBwur+d5FbsQWhCUQUndgV/dUXte1rX9FhYiaNPjQ==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"musical", "nome_artistico"=>"mg", "email"=>"mg@email.com", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"9", "data_nascimento(4i)"=>"14", "data_nascimento(5i)"=>"29", "endereco"=>"rua abc", "numero"=>"123", "cep"=>"00000000", "cidade"=>"sp", "estado"=>"sp", "pais"=>"brasil", "telefone"=>"11999999999", "biografia"=>"eu sou um novo grupo", "salario_hora"=>"10000.00", "cpf"=>"00000000000", "pontos"=>"10"}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+  [1m[36mGrupoMusical Create (0.7ms)[0m  [1m[32mINSERT INTO "grupo_musicals" ("nome", "sobrenome", "nome_artistico", "email", "senha", "data_nascimento", "endereco", "numero", "cep", "cidade", "estado", "pais", "telefone", "biografia", "salario_hora", "cpf", "pontos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["nome", "grupo"], ["sobrenome", "musical"], ["nome_artistico", "mg"], ["email", "mg@email.com"], ["senha", "abc123"], ["data_nascimento", "2019-10-09 14:29:00"], ["endereco", "rua abc"], ["numero", 123], ["cep", 0], ["cidade", "sp"], ["estado", "sp"], ["pais", "brasil"], ["telefone", 11999999999], ["biografia", "eu sou um novo grupo"], ["salario_hora", 10000.0], ["cpf", 0], ["pontos", 10], ["created_at", "2019-10-10 00:56:48.848775"], ["updated_at", "2019-10-10 00:56:48.848775"]]
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+  [1m[35m (50.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/grupo_musicals/1
+Completed 302 Found in 97ms (ActiveRecord: 56.9ms | Allocations: 20534)
+
+
+Started GET "/grupo_musicals/1" for ::1 at 2019-10-09 21:56:48 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGrupoMusical Load (3.5ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+  Rendering grupo_musicals/show.html.erb within layouts/application
+  Rendered grupo_musicals/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1022)
+Completed 200 OK in 19ms (Views: 6.7ms | ActiveRecord: 3.9ms | Allocations: 11854)
+
+
+Started GET "/grupo_musicals/search?email=grupo@email.com" for ::1 at 2019-10-09 21:56:59 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"email"=>"grupo@email.com", "id"=>"search"}
+  [1m[36mGrupoMusical Load (0.9ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1208)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started GET "/grupo_musicals/" for ::1 at 2019-10-09 21:57:20 -0300
+Processing by GrupoMusicalsController#index as HTML
+  Rendering grupo_musicals/index.html.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals"[0m
+  ↳ app/views/grupo_musicals/index.html.erb:32
+  Rendered grupo_musicals/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1466)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 2148)
+
+
+Started GET "/grupo_musicals/search?email=mg@email.com" for ::1 at 2019-10-09 21:57:32 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"email"=>"mg@email.com", "id"=>"search"}
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1207)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started GET "/grupo_musicals/search?noome=grupo" for ::1 at 2019-10-09 22:05:12 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"noome"=>"grupo", "id"=>"search"}
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2646)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started GET "/grupo_musicals/search?nome=grupo" for ::1 at 2019-10-09 22:07:07 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"nome"=>"grupo", "id"=>"search"}
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1207)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:25:25 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123", "id"=>"search"}
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1425)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find GrupoMusical with 'id'=search):
+  
+app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:27:35 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (26.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:4
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 80.7ms | Allocations: 17438)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 36.5ms | Allocations: 18775)
+
+
+  
+ActionView::Template::Error (Missing partial grupo_musicals/_grupo_musical with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ricardo/projetos/engenharia/great-times_app/app/views"
+  * "/home/ricardo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actiontext-6.0.0/app/views"
+  * "/home/ricardo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionmailbox-6.0.0/app/views"
+  * "/home/ricardo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.7.1/app/views"
+):
+    1: 
+    2: <h1>Search Results </h1>
+    3: 
+    4: <%= render @grupo_musicals %>
+  
+app/views/grupo_musicals/search.erb:4
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:30:34 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:35
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 4.2ms | Allocations: 1506)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 3075)
+
+
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:30:50 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.3ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:35
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 3.4ms | Allocations: 1212)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 2768)
+
+
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:31:00 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:35
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 2.6ms | Allocations: 1215)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 2781)
+
+
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:31:09 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.5ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:31
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 2.6ms | Allocations: 1180)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 2746)
+
+
+Started GET "/grupo_musicals/new" for ::1 at 2019-10-09 22:31:23 -0300
+Processing by GrupoMusicalsController#new as HTML
+  Rendering grupo_musicals/new.html.erb within layouts/application
+  Rendered grupo_musicals/_form.html.erb (Duration: 94.7ms | Allocations: 51123)
+  Rendered grupo_musicals/new.html.erb within layouts/application (Duration: 95.8ms | Allocations: 51485)
+Completed 200 OK in 100ms (Views: 96.8ms | ActiveRecord: 0.0ms | Allocations: 52190)
+
+
+Started POST "/grupo_musicals" for ::1 at 2019-10-09 22:31:34 -0300
+Processing by GrupoMusicalsController#create as HTML
+  Parameters: {"authenticity_token"=>"Wqf0VpqDoAmxIhxFx846QdPGxFzHPdMzKp8B4M7ikf2IaBAmC9VdwrbOOFkuMY+xG7KxL7Yz3ev/iajvnrd4ew==", "grupo_musical"=>{"nome"=>"grupo", "sobrenome"=>"asd", "nome_artistico"=>"asd", "email"=>"asd", "senha"=>"abc123", "data_nascimento(1i)"=>"2019", "data_nascimento(2i)"=>"10", "data_nascimento(3i)"=>"10", "data_nascimento(4i)"=>"01", "data_nascimento(5i)"=>"31", "endereco"=>"", "numero"=>"", "cep"=>"", "cidade"=>"", "estado"=>"", "pais"=>"", "telefone"=>"", "biografia"=>"", "salario_hora"=>"", "cpf"=>"", "pontos"=>""}, "commit"=>"Create Grupo musical"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+  [1m[36mGrupoMusical Create (0.6ms)[0m  [1m[32mINSERT INTO "grupo_musicals" ("nome", "sobrenome", "nome_artistico", "email", "senha", "data_nascimento", "endereco", "cidade", "estado", "pais", "biografia", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["nome", "grupo"], ["sobrenome", "asd"], ["nome_artistico", "asd"], ["email", "asd"], ["senha", "abc123"], ["data_nascimento", "2019-10-10 01:31:00"], ["endereco", ""], ["cidade", ""], ["estado", ""], ["pais", ""], ["biografia", ""], ["created_at", "2019-10-10 01:31:34.737545"], ["updated_at", "2019-10-10 01:31:34.737545"]]
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/grupo_musicals_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/grupo_musicals/2
+Completed 302 Found in 56ms (ActiveRecord: 43.7ms | Allocations: 3567)
+
+
+Started GET "/grupo_musicals/2" for ::1 at 2019-10-09 22:31:34 -0300
+Processing by GrupoMusicalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGrupoMusical Load (1.2ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE "grupo_musicals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/grupo_musicals_controller.rb:71:in `set_grupo_musical'
+  Rendering grupo_musicals/show.html.erb within layouts/application
+  Rendered grupo_musicals/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 677)
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 2074)
+
+
+Started GET "/grupo_musicals" for ::1 at 2019-10-09 22:31:40 -0300
+Processing by GrupoMusicalsController#index as HTML
+  Rendering grupo_musicals/index.html.erb within layouts/application
+  [1m[36mGrupoMusical Load (1.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals"[0m
+  ↳ app/views/grupo_musicals/index.html.erb:32
+  Rendered grupo_musicals/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1606)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 1.4ms | Allocations: 2268)
+
+
+Started GET "/grupo_musicals/search?nome=grupo&senha=123" for ::1 at 2019-10-09 22:31:42 -0300
+Processing by GrupoMusicalsController#search as HTML
+  Parameters: {"nome"=>"grupo", "senha"=>"123"}
+  Rendering grupo_musicals/search.erb within layouts/application
+  [1m[36mGrupoMusical Load (0.4ms)[0m  [1m[34mSELECT "grupo_musicals".* FROM "grupo_musicals" WHERE (nome LIKE '%grupo%')[0m
+  ↳ app/views/grupo_musicals/search.erb:31
+  Rendered grupo_musicals/search.erb within layouts/application (Duration: 2.0ms | Allocations: 817)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1388)
+
+
