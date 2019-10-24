@@ -2,7 +2,7 @@
 
 # Great Times
 The main goal of this project is:
-Find a way to connect musicians and stablishments
+Connect musicians and stablishments
 ---
 > Repo for the Software Engineering class
 
