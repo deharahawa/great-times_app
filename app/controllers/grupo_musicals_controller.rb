@@ -12,11 +12,15 @@ class GrupoMusicalsController < ApplicationController
   end
 
   def login 
-    count = GrupoMusical.find_by(nome: params[:nome], senha: params[:senha])
-    if count
-      flash[:notice] = "Logado com sucesso."   
+    loginMessage
+  end
+
+  def loginMessage
+    exist = GrupoMusical.find_by(email: params[:email], senha: params[:senha])
+    if exist
+      redirect_to "/", notice: "Logado com sucesso."   
     else
-      flash[:notice] = "Falha de login."
+      redirect_to "/", alert: "Falha de login."
     end
   end
 

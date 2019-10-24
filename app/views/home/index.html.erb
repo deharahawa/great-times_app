@@ -27,6 +27,13 @@
 <body>
 	<%=yield%>
 	<!-- Nosso menu começa aqui -->
+	<% if flash[:notice] -%>
+  		<div class = "alert alert-success"><%= flash[:notice] %></div>
+	<% end %>
+	<% if flash[:alert] -%>
+  		<div class = "alert alert-error"><%= flash[:alert] %></div>
+	<% end %>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   	<a class="navbar-brand fonte-menu" href="#">SERVIÇO</a>
   	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -462,19 +469,20 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-			<form>
+			<form action="login">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Email</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
 				    <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém</small>
 				    <label for="exampleInputPassword1 pt-1">Senha</label>
-    				<input type="password" class="form-control" id="exampleInputPassword1">
+    				<input type="password" class="form-control" id="exampleInputPassword1" name="senha">
 				  </div>
+
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+			        <button type="submit" class="btn btn-primary">Entrar</button>
+			      </div>
 			</form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-	        <button type="button" class="btn btn-primary">Entrar</button>
 	      </div>
 	    </div>
 	  </div>

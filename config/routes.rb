@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'grupo_musicals/search' => 'grupo_musicals#search', as: 'grupo_musicals/search'
-  get 'grupo_musicals/login' => 'grupo_musicals#login', as: 'grupo_musicals/login'
+  get 'login' => 'grupo_musicals#login', as: 'grupo_musicals/login'
 
   resources :home
   resources :eventos
