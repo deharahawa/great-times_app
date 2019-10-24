@@ -11,6 +11,15 @@ class GrupoMusicalsController < ApplicationController
     @grupo_musicals = GrupoMusical.where("nome LIKE ?", "%" + params[:nome] + "%")
   end
 
+  def login 
+    count = GrupoMusical.find_by(nome: params[:nome], senha: params[:senha])
+    if count
+      flash[:notice] = "Logado com sucesso."   
+    else
+      flash[:notice] = "Falha de login."
+    end
+  end
+
   # GET /grupo_musicals/1
   # GET /grupo_musicals/1.json
   def show
