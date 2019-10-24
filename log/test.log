@@ -377,3 +377,53 @@ Started GET "/events" for 127.0.0.1 at 2019-09-26 23:29:31 -0300
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "193bc42b894361e516ef9ecc415aab537d83cc44"], ["created_at", "2019-10-08 19:33:07.857445"], ["updated_at", "2019-10-08 19:33:07.857445"]]
   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (114.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (274.7ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "avaliacaos" CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "avaliacaos" ("id" bigserial primary key, "avaliacao_texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "contatos" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "contatos" ("id" bigserial primary key, "nome_contato" text, "email_contato" text, "telefone" integer, "texto" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "estabelecimentos" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "estabelecimentos" ("id" bigserial primary key, "nome" character varying, "nome_proprietario" character varying, "email" character varying, "senha" character varying, "descricao" text, "capacidade" integer, "endereco" character varying, "numero" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "cnpj" integer, "telefone" integer, "imagem" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "eventos" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "eventos" ("id" bigserial primary key, "nome" character varying, "data_evento" date, "data_limite_inscricao" character varying, "capacidade" integer, "imagem" bytea, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "generos" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "generos" ("id" bigserial primary key, "nome_genero" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "grupo_musicals" CASCADE[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "grupo_musicals" ("id" bigserial primary key, "nome" character varying, "sobrenome" character varying, "nome_artistico" character varying, "email" character varying, "senha" character varying, "data_nascimento" timestamp, "endereco" character varying, "numero" integer, "cep" integer, "cidade" character varying, "estado" character varying, "pais" character varying, "telefone" bigint, "biografia" text, "salario_hora" float, "imagens" bytea, "video" bytea, "cpf" integer, "pontos" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "instrumentos" CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "instrumentos" ("id" bigserial primary key, "nome_instrumento" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "negociacaos" CASCADE[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "negociacaos" ("id" bigserial primary key, "salario_combinado" float, "status_negociacao" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "redes" CASCADE[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "redes" ("id" bigserial primary key, "nome_rede" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tipo_estabelecimentos" CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "tipo_estabelecimentos" ("id" bigserial primary key, "nome_tipo" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191010005138)[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191008043524),
+(20191008043731),
+(20191008043805),
+(20191008043830),
+(20191008043854),
+(20191008043953),
+(20191008044133),
+(20191008044802),
+(20191008045310),
+(20191008045528);
+
+[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-24 18:33:28.218246"], ["updated_at", "2019-10-24 18:33:28.218246"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "81b29c5134eccdc0fa90bab7d397ff90836d8046"], ["created_at", "2019-10-24 18:33:28.227021"], ["updated_at", "2019-10-24 18:33:28.227021"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
