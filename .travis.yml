@@ -1,7 +1,7 @@
 language: ruby
 rvm:
   - 2.6.1
-  - jruby
+  
 before_install:
   - gem install rails
   - gem update --system
@@ -9,12 +9,6 @@ before_install:
   - sudo apt-get install libpq-dev
   # - gem install pg -v '1.1.4' --source 'https://rubygems.org/'
   - bundle install
-
-before_script:
-  - bundle update --bundler
-script:   
-  - gem install bundle
-  - bundle exec rake
 
 services:
   - postgresql
