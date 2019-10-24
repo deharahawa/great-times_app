@@ -7,6 +7,9 @@ before_install:
   - gem update --system
   - gem install bundler
   - sudo apt-get install libpq-dev
+  - psql -c 'create database my_database_development;' -U postgres
+  - psql -c 'create database my_database_test;' -U postgres
+  - psql -c 'create database my_database_production;' -U postgres
   # - gem install pg -v '1.1.4' --source 'https://rubygems.org/'
   - bundle install
 
