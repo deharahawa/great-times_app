@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2019_10_08_045528) do
     t.string "senha"
     t.text "descricao"
     t.integer "capacidade"
-    t.integer "cep"
     t.string "endereco"
     t.integer "numero"
+    t.integer "cep"
     t.string "cidade"
     t.string "estado"
     t.string "pais"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_045528) do
     t.string "nome_artistico"
     t.string "email"
     t.string "senha"
-    t.date "data_nascimento"
+    t.datetime "data_nascimento"
     t.string "endereco"
     t.integer "numero"
     t.integer "cep"
@@ -93,29 +93,6 @@ ActiveRecord::Schema.define(version: 2019_10_08_045528) do
 
   create_table "instrumentos", force: :cascade do |t|
     t.text "nome_instrumento"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "musicos", force: :cascade do |t|
-    t.string "nome"
-    t.string "sobrenome"
-    t.string "nome_artistico"
-    t.string "email"
-    t.string "senha"
-    t.datetime "data_nascimento"
-    t.string "endereco"
-    t.integer "numero"
-    t.integer "cep"
-    t.string "cidade"
-    t.string "estado"
-    t.string "pais"
-    t.integer "telefone"
-    t.text "biografia"
-    t.float "salario_hora"
-    t.binary "imagens"
-    t.binary "video"
-    t.integer "cpf"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

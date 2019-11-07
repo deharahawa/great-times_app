@@ -45,4 +45,28 @@ class GrupoMusicalsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to grupo_musicals_url
   end
+
+  test 'should block login whithout data' do
+    get '/login',
+    params: { email: "a@c", senha: "asd" }
+    assert_equal "Falha de login.", flash[:alert]
+  end
+
+  test 'should block login whith wrong password' do
+    get '/login',
+    params: { email: @grupo_musical.email, senha: "asd" }
+    assert_equal "Falha de login.", flash[:alert]
+  end
+  
+  test 'should block login whith wrong email' do
+    get '/login',
+    params: { email: "a@c", senha: @grupo_musical.senha }
+    assert_equal "Falha de login.", flash[:alert]
+  end
+
+  test 'should permit login' do
+    get '/login',
+    params: { email: @grupo_musical.email, senha: @grupo_musical.senha }
+    assert_equal "Logado com sucesso.", flash[:notice]
+  end  
 end
