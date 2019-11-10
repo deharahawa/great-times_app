@@ -1,0 +1,25 @@
+<title>Display | Broadway</title>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag (url_for(@play.image_url)), class: "play-show" %>
+  </div>
+  <div class="col-md-8">
+    <div class="play-info">
+      <h2 class="play-title"><%= @play.title %></h2>
+      <h3 class="play-director"><span>From </span><%= @play.director %></h3>
+      <h4 class="play-director"><%= @play.category.name %></h4>
+      <p class="play-description"><%= @play.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="links btn-group">
+  <% if user_signed_in? %>
+    <% if @play.user_id == current_user.id %>
+      <%= link_to "Edit", edit_play_path(@play), class: "btn btn-custom" %>
+      <%= link_to "delete", play_path(@play), method: :delete, data: 
+      {confirm: "Você tem certeza?"}, class: "btn btn-custom" %>
+    <% end %>
+  <% end %>
+</div>

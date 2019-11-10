@@ -1,0 +1,10 @@
+<%= simple_form_for @play do |f| %>
+  <%= f.hidden_field :image, value: @play&.cached_image_data %>
+  <%= f.file_field :image %>
+  <%= select_tag(:category_id,  options_for_select(@categories),
+  :prompt => "Select Category") %>
+  <%= f.input :title , label: "Play title"%>
+  <%= f.input :description %>
+  <%= f.input :director %>
+  <%= f.button :submit %>
+<% end %>

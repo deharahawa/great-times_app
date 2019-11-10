@@ -1,0 +1,12 @@
+<title>Edit | Broadway</title>
+<h1>Edit Broadway play</h1>
+
+<%= simple_form_for @play, html: {multipart: true} do |f| %>
+  <%= f.hidden_field :image, value: @play.cached_image_data %>
+  <%= f.file_field :image %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :title , label: "Play title"%>
+  <%= f.input :description %>
+  <%= f.input :director %>
+  <%= f.button :submit %>
+<% end %>
