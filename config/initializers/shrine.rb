@@ -1,22 +1,14 @@
 require "shrine"
 require "shrine/storage/file_system"
-require "image_processing/mini_magick"
-require "image_processing/mini_magick"
+# require "image_processing/mini_magick"
 
-MiniMagick.cli = :graphicsmagick
+# MiniMagick.cli = :graphicsmagick
 
-processed = ImageProcessing::MiniMagick
-  .source(image)
-  .resize_to_limit(400, 400)
-  .strip
-  .call # will use `gm convert` instead of `convert`
-
-
-processed = ImageProcessing::MiniMagick
-  .source(image)
-  .resize_to_limit(400, 400)
-  .strip
-  .call
+# processed = ImageProcessing::MiniMagick
+#   .source(image)
+#   .resize_to_limit(400, 400)
+#   .strip
+#   .call # will use `gm convert` instead of `convert`
  
 Shrine.storages = { 
   cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary 

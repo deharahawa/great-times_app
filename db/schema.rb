@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_194739) do
+ActiveRecord::Schema.define(version: 2019_11_11_205046) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,11 +47,16 @@ ActiveRecord::Schema.define(version: 2019_11_10_194739) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "category_id"
-    t.string "play_img_file_name"
-    t.string "play_img_content_type"
-    t.bigint "play_img_file_size"
-    t.datetime "play_img_updated_at"
     t.text "image_data"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "play_id"
   end
 
   create_table "users", force: :cascade do |t|

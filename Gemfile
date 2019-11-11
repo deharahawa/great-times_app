@@ -27,12 +27,14 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'jquery-rails'
 gem "shrine", "~> 3.0"
+gem "mini_magick"
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
