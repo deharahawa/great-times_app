@@ -18925,3 +18925,246 @@ Processing by PlaysController#show as HTML
 Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.8ms | Allocations: 16203)
 
 
+Started GET "/plays/1" for ::1 at 2019-11-11 21:02:46 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:4
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 11.1ms | Allocations: 5839)
+  Rendered plays/show.html.erb within layouts/application (Duration: 34.2ms | Allocations: 17312)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 74ms (Views: 55.7ms | ActiveRecord: 1.3ms | Allocations: 39091)
+
+
+Started GET "/plays/1/reviews/3/edit" for ::1 at 2019-11-11 21:02:48 -0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"play_id"=>"1", "id"=>"3"}
+  [1m[36mPlay Load (0.5ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:38:in `find_play'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:42:in `find_review'
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5817)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 43ms (Views: 34.3ms | ActiveRecord: 1.4ms | Allocations: 21466)
+
+
+Started PATCH "/plays/1/reviews/3" for ::1 at 2019-11-11 21:02:55 -0300
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"Ma35jxMZZ41WPr1ig5tFIE9hzhsSWFBoESKfC4TZWe4dgBWt4ZcK8Px60l2c7xZMO0Y4idya+XE/KcGcvRUaPw==", "review"=>{"rating"=>"5", "comment"=>"\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\" a"}, "commit"=>"Update Review", "play_id"=>"1", "id"=>"3"}
+  [1m[36mPlay Load (0.1ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:38:in `find_play'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:42:in `find_review'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mPlay Load (0.7ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mReview Update (0.3ms)[0m  [1m[33mUPDATE "reviews" SET "comment" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["comment", "\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\" a"], ["updated_at", "2019-11-12 00:02:55.343239"], ["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[35m (71.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+Redirected to http://localhost:3000/plays/1
+Completed 302 Found in 114ms (ActiveRecord: 73.5ms | Allocations: 7666)
+
+
+Started GET "/plays/1" for ::1 at 2019-11-11 21:02:55 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:4
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 5.4ms | Allocations: 1011)
+  Rendered plays/show.html.erb within layouts/application (Duration: 16.2ms | Allocations: 2932)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 43ms (Views: 35.0ms | ActiveRecord: 1.7ms | Allocations: 16499)
+
+
+Started GET "/plays/1/reviews/3/edit" for ::1 at 2019-11-11 21:02:57 -0300
+Processing by ReviewsController#edit as HTML
+  Parameters: {"play_id"=>"1", "id"=>"3"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:38:in `find_play'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:42:in `find_review'
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (Duration: 13.1ms | Allocations: 5477)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 38ms (Views: 30.7ms | ActiveRecord: 0.8ms | Allocations: 20269)
+
+
+Started PATCH "/plays/1/reviews/3" for ::1 at 2019-11-11 21:03:00 -0300
+Processing by ReviewsController#update as HTML
+  Parameters: {"authenticity_token"=>"MjM0Ss2xJvOphp6XfO8p//T3r1Osyj2STCtObXJ9VMoeHthoPz9LjgPC8ahjm3qTgNBZwWIIlItiIBD6S7EXGw==", "review"=>{"rating"=>"5", "comment"=>"\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\""}, "commit"=>"Update Review", "play_id"=>"1", "id"=>"3"}
+  [1m[36mPlay Load (0.3ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:38:in `find_play'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:42:in `find_review'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mPlay Load (0.3ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[36mReview Update (0.4ms)[0m  [1m[33mUPDATE "reviews" SET "comment" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["comment", "\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\""], ["updated_at", "2019-11-12 00:03:00.501126"], ["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:24:in `update'
+Redirected to http://localhost:3000/plays/1
+Completed 302 Found in 97ms (ActiveRecord: 74.2ms | Allocations: 6709)
+
+
+Started GET "/plays/1" for ::1 at 2019-11-11 21:03:00 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:4
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 7.8ms | Allocations: 1004)
+  Rendered plays/show.html.erb within layouts/application (Duration: 18.5ms | Allocations: 2768)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 53ms (Views: 46.1ms | ActiveRecord: 1.7ms | Allocations: 16467)
+
+
+Started GET "/plays/1" for ::1 at 2019-11-11 21:04:43 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.2ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:4
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 14.4ms | Allocations: 5964)
+  Rendered plays/show.html.erb within layouts/application (Duration: 41.9ms | Allocations: 17704)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 107ms (Views: 85.6ms | ActiveRecord: 4.9ms | Allocations: 38632)
+
+
+Started DELETE "/plays/1/reviews/3" for ::1 at 2019-11-11 21:04:45 -0300
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0v08o2oPRR8OAdZP98wmw2IfSmmlAtYIB2fO7IIrllzxs7ctCP4QRcELB2jVYOk0Ue7exq7CRBXVk/zsYEcVFg==", "play_id"=>"1", "id"=>"3"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:43:in `find_play'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:47:in `find_review'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:32:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:32:in `destroy'
+  [1m[35m (58.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/plays/1
+Completed 302 Found in 75ms (ActiveRecord: 59.3ms | Allocations: 4176)
+
+
+Started GET "/plays/1" for ::1 at 2019-11-11 21:04:45 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:30
+  Rendered plays/show.html.erb within layouts/application (Duration: 19.7ms | Allocations: 2729)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 1.7ms | Allocations: 16290)
+
+
+Started GET "/plays/1/reviews/new" for ::1 at 2019-11-11 21:04:47 -0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"play_id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:43:in `find_play'
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 15.2ms | Allocations: 5999)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 17.0ms | Allocations: 6309)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 0.7ms | Allocations: 20914)
+
+
+Started POST "/plays/1/reviews" for ::1 at 2019-11-11 21:04:51 -0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"cri0phdL5xAOJ1zD4rhRvUBhgRDfpQbhgiMHI9GvyqzzkSqfX2wAs4W+zlT4J0enkfokfGLg3hipIfsgz76Lcg==", "review"=>{"rating"=>"5", "comment"=>"\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\""}, "commit"=>"Create Review", "play_id"=>"1"}
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:43:in `find_play'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+  [1m[36mPlay Load (0.3ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "play_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "\"Mean Girls is not a regular musical. It's a cool musical. A dazzling, hilarious marvel!\""], ["created_at", "2019-11-12 00:04:51.393924"], ["updated_at", "2019-11-12 00:04:51.393924"], ["user_id", 1], ["play_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+Redirected to http://localhost:3000/plays/1
+Completed 302 Found in 102ms (ActiveRecord: 74.4ms | Allocations: 7732)
+
+
+Started GET "/plays/1" for ::1 at 2019-11-11 21:04:51 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.5ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:72:in `find_play'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 1]]
+  ↳ app/views/plays/show.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:4
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 5.2ms | Allocations: 1011)
+  Rendered plays/show.html.erb within layouts/application (Duration: 18.3ms | Allocations: 2779)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 48ms (Views: 40.4ms | ActiveRecord: 2.2ms | Allocations: 16490)
+
+
