@@ -2,9 +2,9 @@
   <%= f.hidden_field :image, value: @play&.cached_image_data %>
   <%= f.file_field :image %>
   <%= select_tag(:category_id,  options_for_select(@categories),
-  :prompt => "Select Category") %>
-  <%= f.input :title , label: "Play title"%>
-  <%= f.input :description %>
-  <%= f.input :director %>
-  <%= f.button :submit %>
+  :prompt => "Selecione um estilo") %>
+  <%= f.input :title , label: "Nome da banda/artista"%>
+  <%= f.input :description, label: "Descrição" %>
+  <%= f.input :director, label:"Responsável" %>
+  <%= f.button :submit, "Cadastrar Artista", :class => "btn-custom2"%>
 <% end %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Broadway</title>
+    <title>Stage</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,27 +17,27 @@
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to  "Broadway", root_path, class: "navbar-brand" %>
+          <%= link_to  "Stage", root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li>
-              <%= link_to "Sign Out", destroy_user_session_path,
+              <%= link_to "Sair", destroy_user_session_path,
               method: :delete %>
             </li>
           <% else %>
             <li>
-              <%= link_to "Sign Up", new_user_registration_path %>
+              <%= link_to "Registrar", new_user_registration_path %>
             </li>
             <li>
-                <%= link_to "Log In", new_user_session_path %>
+                <%= link_to "Login", new_user_session_path %>
             </li>
           <% end %>
         </ul>
         <ul class="nav navbar-nav">
           <li class="navbar-dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-            role="button" aria-expanded="false">Sort
+            role="button" aria-expanded="false">Estilos
             <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -51,7 +51,7 @@
 
           <% if user_signed_in? %>
             <li>
-                <%= link_to "Add Play", new_play_path %>
+                <%= link_to "Adicione artista", new_play_path %>
             </li>
           <% end %>
         </ul>

@@ -6,9 +6,9 @@
   <% if user_signed_in? %>
     <% if review.user_id == current_user.id %>
       <div class="links btn-group">
-        <%= link_to "Edit", edit_play_review_path(review.play, review),
+        <%= link_to "Editar", edit_play_review_path(review.play, review),
         class: "btn btn-custom" %>
-        <%= link_to "Delete", play_review_path(review.play, review),
+        <%= link_to "Deletar", play_review_path(review.play, review),
         method: :delete, data: { confirm: "Você tem certeza?" }, class: "btn btn-custom" %>
       </div>
     <% end %>

@@ -1,8 +1,8 @@
-<title>Index | Broadway</title>
+<title>Indice | Stage</title>
 <h1 class="current-category"><%= params[:category] %></h1>
 
 <% if @plays.count == 0 %>
-  <h3>There are no plays in this category</h3>
+  <h3>Ainda não há artistas nesse estilo</h3>
 <% else %>
   <div class="row">
     <% @plays.each do |play| %>

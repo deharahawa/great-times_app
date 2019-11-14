@@ -1,4 +1,4 @@
-<title>Display | Broadway</title>
+<title>Display | Stage</title>
 
 <div class="row">
   <div class="col-md-4">
@@ -7,11 +7,11 @@
   <div class="col-md-8">
     <div class="play-info">
       <h2 class="play-title"><%= @play.title %></h2>
-      <h3 class="play-director"><span><em>From: </em></span><%= @play.director %></h3>
+      <h3 class="play-director"><span><em>Por: </em></span><%= @play.director %></h3>
       <h4 class="play-director"><%= @play.category.name %></h4>
-      <h4 class="avg-rating">Average Rating</h4>
+      <h4 class="avg-rating">Avaliação média</h4>
       <div class="average-review-rating" data-score=<%= @average_review %>></div>
-      <span class="number-of-reviews"><em>From: </em><%= @play.reviews.count %> reviews </span>
+      <span class="number-of-reviews"><em>From: </em><%= @play.reviews.count %> avaliações </span>
       <p class="play-desc"><%= @play.description %></p>
     </div>
   </div>
@@ -20,10 +20,10 @@
 <div class="row">
   <div class="col-md-12">
     <div class="reviews">
-      <h1> Reviews </h1>
+      <h1> Avaliações </h1>
       <%= render @play.reviews %>
       <div>
-        <%= link_to "Add Reviews", new_play_review_path(@play), class: "btn-custom" %>
+        <%= link_to "Adicionar avaliações", new_play_review_path(@play), class: "btn-custom" %>
       </div>
     </div>
   </div>
@@ -32,8 +32,8 @@
 <div class="links btn-group">
   <% if user_signed_in? %>
     <% if @play.user_id == current_user.id %>
-      <%= link_to "Edit", edit_play_path(@play), class: "btn btn-custom" %>
-      <%= link_to "delete", play_path(@play), method: :delete, data: 
+      <%= link_to "Editar Artista", edit_play_path(@play), class: "btn btn-custom" %>
+      <%= link_to "Deletar Artista", play_path(@play), method: :delete, data: 
       {confirm: "Você tem certeza?"}, class: "btn btn-custom" %>
     <% end %>
   <% end %>

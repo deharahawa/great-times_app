@@ -17,7 +17,7 @@ class PlaysController < ApplicationController
     if @play.reviews.blank?
       @average_review = 0
     else
-      @average_review = @play.reviews.average(:rating).round(2)
+      @average_review = @play.reviews.average(:rating).present? ? @play.reviews.average(:rating).round(2) : 0
     end
   end
 

@@ -1,9 +1,9 @@
 <%= simple_form_for ([@play, @play.reviews.build]) do |f| %>
   <div id="rating-form">
-    <label> Rating </label>
+    <label> Avaliação </label>
   </div>
-  <%= f.input :comment %>
-  <%= f.button :submit, :class => "btn-custom2" %>
+  <%= f.input :comment, label: "Comentário" %>
+  <%= f.button :submit, "Enviar Avaliação", :class => "btn-custom2" %>
 <% end %>
 
 <script>
