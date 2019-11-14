@@ -21960,3 +21960,153 @@ Processing by PlaysController#index as HTML
 Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.9ms | Allocations: 15811)
 
 
+Started GET "/plays/new" for ::1 at 2019-11-14 18:42:08 -0300
+Processing by PlaysController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:74:in `set_selection_collections'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/plays_controller.rb:28:in `map'
+  Rendering plays/new.html.erb within layouts/application
+  Rendered plays/_form.html.erb (Duration: 33.7ms | Allocations: 6174)
+  Rendered plays/new.html.erb within layouts/application (Duration: 37.8ms | Allocations: 6475)
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 95ms (Views: 68.8ms | ActiveRecord: 1.5ms | Allocations: 21062)
+
+
+Started POST "/plays" for ::1 at 2019-11-14 18:42:56 -0300
+Processing by PlaysController#create as HTML
+  Parameters: {"authenticity_token"=>"sqnz0Q19xFQS1aL/AsMDsIQ9dZSODGjmbJhWf2KpjaBGSHGVCaCCdfjrLF1G4naGyJBlJHecIRY6ZT5XXQybsA==", "play"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7b789bf5a0 @tempfile=#<Tempfile:/tmp/RackMultipart20191114-3500-gvcv6f.jpeg>, @original_filename="WhatsApp Image 2019-10-31 at 20.35.35.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"play[image]\"; filename=\"WhatsApp Image 2019-10-31 at 20.35.35.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"FABIÃO", "description"=>"\"Aqui é só bomba e pó o importante é o p@u crescer\"", "director"=>"Armazem do Carmo"}, "category_id"=>"1", "commit"=>"Cadastrar Artista"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/plays_controller.rb:65:in `map'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:74:in `set_selection_collections'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[36mPlay Create (0.4ms)[0m  [1m[32mINSERT INTO "plays" ("title", "description", "director", "created_at", "updated_at", "user_id", "category_id", "image_data") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "FABIÃO"], ["description", "\"Aqui é só bomba e pó o importante é o p@u crescer\""], ["director", "Armazem do Carmo"], ["created_at", "2019-11-14 21:42:56.365335"], ["updated_at", "2019-11-14 21:42:56.365335"], ["user_id", 1], ["category_id", 1], ["image_data", "{\"id\":\"fd896325565165151631be85f2c3e603.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"WhatsApp Image 2019-10-31 at 20.35.35.jpeg\",\"size\":49587,\"mime_type\":\"image/jpeg\"}}"]]
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[36mPlay Update (0.6ms)[0m  [1m[33mUPDATE "plays" SET "updated_at" = ?, "image_data" = ? WHERE "plays"."id" = ?[0m  [["updated_at", "2019-11-14 21:42:56.396907"], ["image_data", "{\"id\":\"c72aa4fdc06c01ef53a9901ef89e7109.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"WhatsApp Image 2019-10-31 at 20.35.35.jpeg\",\"size\":49587,\"mime_type\":\"image/jpeg\"}}"], ["id", 4]]
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/plays_controller.rb:35:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 83ms (ActiveRecord: 31.3ms | Allocations: 11348)
+
+
+Started GET "/" for ::1 at 2019-11-14 18:42:56 -0300
+Processing by PlaysController#index as HTML
+  Rendering plays/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "plays"[0m
+  ↳ app/views/plays/index.html.erb:4
+  [1m[36mPlay Load (0.7ms)[0m  [1m[34mSELECT "plays".* FROM "plays" ORDER BY created_at DESC[0m
+  ↳ app/views/plays/index.html.erb:8
+  Rendered plays/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1719)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 1.4ms | Allocations: 15810)
+
+
+Started GET "/" for ::1 at 2019-11-14 18:43:59 -0300
+Processing by PlaysController#index as HTML
+  Rendering plays/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "plays"[0m
+  ↳ app/views/plays/index.html.erb:4
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays" ORDER BY created_at DESC[0m
+  ↳ app/views/plays/index.html.erb:8
+  Rendered plays/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1720)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 74ms (Views: 71.9ms | ActiveRecord: 1.0ms | Allocations: 15575)
+
+
+Started GET "/plays/4" for ::1 at 2019-11-14 18:44:00 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlay Load (0.1ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:78:in `find_play'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/controllers/plays_controller.rb:17:in `show'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/views/plays/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:33
+  Rendered plays/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2523)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 0.9ms | Allocations: 16599)
+
+
+Started GET "/plays/4/reviews/new" for ::1 at 2019-11-14 18:44:06 -0300
+Processing by ReviewsController#new as HTML
+  Parameters: {"play_id"=>"4"}
+  [1m[36mPlay Load (0.1ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:44:in `find_play'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (Duration: 16.8ms | Allocations: 2951)
+  Rendered reviews/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 3014)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 73ms (Views: 59.1ms | ActiveRecord: 0.5ms | Allocations: 17776)
+
+
+Started POST "/plays/4/reviews" for ::1 at 2019-11-14 18:44:20 -0300
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"+Lzxmkthj1VztFDsgy7JlhSE+7Jy7NvGF//PnlH4yC/GbogHy/PAc7lYtqgKtr42KRDrB3MYVNZagD+zb1ObTA==", "review"=>{"rating"=>"1", "comment"=>"Cara perigoso, frequentador da Augusta"}, "commit"=>"Enviar Avaliação", "play_id"=>"4"}
+  [1m[36mPlay Load (0.6ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:44:in `find_play'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:13:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mPlay Load (0.3ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "created_at", "updated_at", "user_id", "play_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 1], ["comment", "Cara perigoso, frequentador da Augusta"], ["created_at", "2019-11-14 21:44:20.999949"], ["updated_at", "2019-11-14 21:44:20.999949"], ["user_id", 1], ["play_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[35m (80.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+Redirected to http://localhost:3000/plays/4
+Completed 302 Found in 119ms (ActiveRecord: 82.8ms | Allocations: 6807)
+
+
+Started GET "/plays/4" for ::1 at 2019-11-14 18:44:21 -0300
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlay Load (0.2ms)[0m  [1m[34mSELECT "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/plays_controller.rb:78:in `find_play'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/controllers/plays_controller.rb:17:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/controllers/plays_controller.rb:20:in `show'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/controllers/plays_controller.rb:20:in `show'
+  Rendering plays/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/plays/show.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."play_id" = ?[0m  [["play_id", 4]]
+  ↳ app/views/plays/show.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:6
+  Rendered collection of reviews/_review.html.erb [1 times] (Duration: 5.4ms | Allocations: 1006)
+  Rendered plays/show.html.erb within layouts/application (Duration: 17.6ms | Allocations: 2695)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 114ms (Views: 88.2ms | ActiveRecord: 2.6ms | Allocations: 18138)
+
+
