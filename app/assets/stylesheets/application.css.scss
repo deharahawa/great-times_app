@@ -169,13 +169,13 @@ p.alert, p.notice {
 
   .play-title {
     margin-top: 0;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
   }
 
   .avg-rating {
-    font-size: 1.5em;
-    margin-top: 75px;
+    font-size: 1em;
+    margin-top: 30px;
     margin-bottom: 5px;
     font-weight: bold;
   }
@@ -186,7 +186,7 @@ p.alert, p.notice {
   }
 
   .play-director {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 10px;
     margin-bottom: 10px;
     font-style: italic;
@@ -199,8 +199,17 @@ p.alert, p.notice {
   .play-desc {
     font-size: 1.05em;
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-top: 15px;
+    white-space: pre-wrap;
+  }
+
+  .play-setlist {
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    white-space: pre-wrap;
   }
 
 }

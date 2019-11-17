@@ -7,12 +7,20 @@
   <div class="col-md-8">
     <div class="play-info">
       <h2 class="play-title"><%= @play.title %></h2>
-      <h3 class="play-director"><span><em>Por: </em></span><%= @play.director %></h3>
+      <h2 class="number-of-reviews">Idade: <%= @play.age %></h2>
       <h4 class="play-director"><%= @play.category.name %></h4>
+      <p class="play-desc"><%= @play.description %></p>
       <h4 class="avg-rating">Avaliação média</h4>
       <div class="average-review-rating" data-score=<%= @average_review %>></div>
-      <span class="number-of-reviews"><em>From: </em><%= @play.reviews.count %> avaliações </span>
-      <p class="play-desc"><%= @play.description %></p>
+      <span class="number-of-reviews"><em>De: </em><%= @play.reviews.count %> avaliações </span>
+      <h4 class="avg-rating">Instrumentos que toca:</h4>
+      <p class="play-desc"><%= @play.intruments_play %></p>
+      <h4 class="avg-rating">Instrumentos que possui:</h4>
+      <p class="play-desc"><%= @play.instruments_own %></p>
+      <h4 class="avg-rating">Redes Sociais:</h4>
+      <p class="play-desc"><%= @play.social %></p>
+      <h4 class="avg-rating">Setlist:</h4>
+      <p class="play-setlist"><%= @play.setlist %></p>
     </div>
   </div>
 </div>

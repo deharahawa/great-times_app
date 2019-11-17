@@ -4,7 +4,12 @@
   <%= select_tag(:category_id,  options_for_select(@categories),
   :prompt => "Selecione um estilo") %>
   <%= f.input :title , label: "Nome da banda/artista"%>
+  <%= f.input :age , label: "Idade"%>
   <%= f.input :description, label: "Descrição" %>
-  <%= f.input :director, label:"Responsável" %>
+  <%= f.input :intruments_play , label: "Instrumentos que toca"%>
+  <%= f.input :instruments_own , label: "Instrumentos que possui"%>
+  <%= f.input :social , label: "Redes Sociais"%>
+  <%= f.input :setlist , label: "Setlist"%>
+  <!-- <%= f.input :director, label:"Responsável" %> -->
   <%= f.button :submit, "Cadastrar Artista", :class => "btn-custom2"%>
 <% end %>

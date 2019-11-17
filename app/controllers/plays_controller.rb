@@ -31,6 +31,11 @@ class PlaysController < ApplicationController
   def create
     @play = current_user.plays.build(play_params)
     @play.category_id = params[:category_id]
+    # @play.age = params[:age]
+    # @play.intruments_play = params[:intruments_play]
+    # @play.instruments_own = params[:instruments_own]
+    # @play.social = params[:social]
+    # @play.setlist = params[:setlist]
 
     if @play.save
       redirect_to root_path
@@ -46,6 +51,11 @@ class PlaysController < ApplicationController
 
   def update 
     @play.category_id = params[:category_id]
+    @play.age = params[:age]
+    @play.intruments_play = params[:intruments_play]
+    @play.instruments_own = params[:instruments_own]
+    @play.social = params[:social]
+    @play.setlist = params[:setlist]
 
     if @play.update(play_params)
       redirect_to play_path(@play)
@@ -67,7 +77,8 @@ class PlaysController < ApplicationController
 
   def play_params
     params.require(:play).permit(:title, 
-      :description, :director, :category_id, :image)
+      :description, :director, :category_id, :image, :age, :intruments_play,
+      :instruments_own, :social, :setlist)
   end
 
   def set_selection_collections
