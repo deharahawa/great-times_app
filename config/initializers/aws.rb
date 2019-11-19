@@ -4,7 +4,7 @@
 # })
 
 # S3_BUCKET = Aws::S3::Resource.new.bucket(ENV['stage-greattimes-app'])
-
+require 'aws-sdk'
 s3 = Aws::S3::Resource.new
 
 Aws.config.update({
