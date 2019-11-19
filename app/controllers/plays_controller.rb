@@ -4,6 +4,7 @@ class PlaysController < ApplicationController
   before_action :set_selection_collections, only: [:new,:create]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+  after_action :attach_image, only: [:new, :edit, :create, :update]
 
   def index
     if params[:category].blank?
@@ -92,5 +93,9 @@ class PlaysController < ApplicationController
 
   def set_s3_direct_post
     @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+  end
+
+  def attach_image
+    @play.attach(params[:image])
   end
 end
