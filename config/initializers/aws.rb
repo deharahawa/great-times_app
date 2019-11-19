@@ -5,9 +5,12 @@
 
 # S3_BUCKET = Aws::S3::Resource.new.bucket(ENV['stage-greattimes-app'])
 
-s3 = Aws::S3::Resource.new(
-      credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'],  ENV['AWS_SECRET_ACCESS_KEY']),
-      region: 'us-west-1'
-    )
 
-    obj = s3.bucket(ENV['S3_BUCKET']).object('key')
+# s3 = Aws.config.update({
+#     region: 'us-west-1',
+#     credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+#   })
+
+  s3 = Aws::S3::Resource.new
+
+    obj = s3.bucket('stage-greattimes-app')
