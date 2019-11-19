@@ -28,7 +28,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem "shrine", "~> 3.0"
 gem "mini_magick"
-
+gem "aws-sdk"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
