@@ -6,6 +6,7 @@
 # S3_BUCKET = Aws::S3::Resource.new.bucket(ENV['stage-greattimes-app'])
 require 'aws-sdk'
 s3 = Aws::S3::Resource.new
+creds = Aws::InstanceProfileCredentials.new
 
 Aws.config.update({
     region: 'us-west-1',
