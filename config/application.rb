@@ -6,14 +6,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 # config.assets.initialize_on_precompile = false
 
-ActionController::Base.asset_host = Proc.new { |source|
-  if source.ends_with?('.css')
-    "http://stage-greattimes-app.herokuapp.com"
-  else
-    "http://assets.example.com"
-  end
-}
-
 module Broadway
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
