@@ -94,7 +94,7 @@ class PlaysController < ApplicationController
   def set_s3_direct_post
     s3 = Aws::S3::Resource.new
     s3_bucket = s3.bucket('stage-greattimes-app')
-    s3_direct_post = s3_bucket.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    @s3_direct_post = s3_bucket.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
   end
 
   # def attach_image
