@@ -9,7 +9,9 @@ s3 = Aws::S3::Resource.new
 signer = Aws::Sigv4::Signer.new(
   service: 's3',
   region: 'us-east-1',
-  credentials_provider: Aws::InstanceProfileCredentials.new
+  # static credentials
+  access_key_id: 'ASIAXF6QHR5PCWTXS4TK',
+  secret_access_key: '91AmvM7WRNA/2D62e6o+Oj4F8i2yJATHaIxEZLSG'
 )
 
 Aws.config.update({
