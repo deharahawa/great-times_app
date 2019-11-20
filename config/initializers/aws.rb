@@ -6,6 +6,12 @@
 # S3_BUCKET = Aws::S3::Resource.new.bucket(ENV['stage-greattimes-app'])
 require 'aws-sdk'
 s3 = Aws::S3::Resource.new
+
+s3_client = Aws::S3::Client.new(
+  access_key_id: 'ASIAXF6QHR5PCWTXS4TK',
+  secret_access_key: '91AmvM7WRNA/2D62e6o+Oj4F8i2yJATHaIxEZLSG'
+)
+
 signer = Aws::Sigv4::Signer.new(
   service: 's3',
   region: 'us-east-1',
