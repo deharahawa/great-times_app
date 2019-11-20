@@ -21,7 +21,7 @@ signer = Aws::Sigv4::Signer.new(
 )
 
 Aws.config.update({
-    region: 'us-west-1',
+    region: 'us-east-1',
     credentials: Aws::Credentials.new('ASIAXF6QHR5PCWTXS4TK', '91AmvM7WRNA/2D62e6o+Oj4F8i2yJATHaIxEZLSG')
   })
 
