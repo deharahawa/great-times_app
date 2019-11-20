@@ -120,4 +120,5 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+  config.action_controller.asset_host = "https://s3-us-east-1.amazonaws.com/stage-greattimes-app"
 end
