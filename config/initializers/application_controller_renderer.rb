@@ -13,7 +13,3 @@ else
   "http://assets.example.com"
 end
 }
-image_tag("rails.png")
-# => <img alt="Rails" src="http://assets.example.com/assets/rails.png" />
-stylesheet_link_tag("application")
-# => <link href="http://stylesheets.example.com/assets/application.css" media="screen" rel="stylesheet" />
