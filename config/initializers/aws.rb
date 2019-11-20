@@ -25,4 +25,14 @@ Aws.config.update({
     credentials: Aws::Credentials.new('ASIAXF6QHR5PCWTXS4TK', '91AmvM7WRNA/2D62e6o+Oj4F8i2yJATHaIxEZLSG')
   })
 
- obj = s3.bucket('stage-greattimes-app')
+#  s3_bucket = s3.bucket('stage-greattimes-app')
+
+ aws_credentials = Aws::Credentials.new(
+  ENV['AWS_ACCESS_KEY_ID'],
+  ENV['AWS_SECRET_ACCESS_KEY']
+)
+
+s3_bucket = Aws::S3::Resource.new(
+  region: 'us-east-1',
+  credentials: aws_credentials
+).bucket('stage-greattimes-app')
