@@ -10,6 +10,6 @@ ActionController::Base.asset_host = Proc.new { |source|
 if source.ends_with?('.css')
   "https://stage-greattimes-app.herokuapp.com/"
 else
-  "http://assets.example.com"
+  "https://stage-greattimes-app.herokuapp.com/"
 end
 }
