@@ -3,8 +3,7 @@
   <div class="new-play-form">
     <h1>Editar Artista</h1>
 
-    <%= simple_form_for @play, html: {multipart: true} do |f| %>
-      <%= f.hidden_field :image, value: @play.cached_image_data %>
+    <%= simple_form_for @play, url: plays_path do |f| %>
       <%= f.file_field :image, as: :file %>
       <%= f.select :category_id, @categories %>
       <%= f.input :title , label: "Nome da banda/artista"%>

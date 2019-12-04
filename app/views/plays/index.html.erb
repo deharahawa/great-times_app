@@ -8,7 +8,11 @@
     <% @plays.each do |play| %>
       <div class="col-md-3">
         <a href="/plays/<%= play.id %>">
-            <%= image_tag (url_for(play.image_url)), class: "play" %>            
+          <% if @play.image %>
+            <%= image_tag(@play.image)  %>
+          <% else %>
+            <h6> Sem imagens disponiveis </h6>
+          <% end %>
         </a>
       </div>
     <% end %>
