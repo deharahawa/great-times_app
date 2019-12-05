@@ -18,7 +18,8 @@ class GrupoMusicalsController < ApplicationController
   def loginMessage
     exist = GrupoMusical.find_by(email: params[:email], senha: params[:senha])
     if exist
-      redirect_to "/", notice: "Logado com sucesso."   
+      session[:user_id] = exist.id
+      redirect_to "/", notice: "Logado com sucesso."
     else
       redirect_to "/", alert: "Falha de login."
     end

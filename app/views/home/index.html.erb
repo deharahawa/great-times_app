@@ -58,7 +58,11 @@
         	<a class="nav-link fonte-menu link-menu" href="#contato">Contato</a>
       		</li>
       		<li class="nav-item lista-menu-superior">
-        	<button type="button" class="btn btn-lg botao-menu" data-toggle="modal" data-target="#modal-login">Login</button>
+			<% if session[:user_id] -%>
+		  		<a href="grupo_musicals/<%= session[:user_id]%>"><button type="button" class="btn btn-lg botao-menu">Perfil</button></a>
+			<% else -%>
+		  		<button type="button" class="btn btn-lg botao-menu" data-toggle="modal" data-target="#modal-login">Login</button>
+			<% end %>
       		</li>
       		<li class="nav-item lista-menu-superior">
       		<a href="grupo_musicals/new"><button type="button" class="btn btn-lg botao-menu">Cadastrar</button></a>
